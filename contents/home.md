@@ -12,7 +12,7 @@
 878954714@qq.com
 
 #### Education
-内蒙古农业大学 本科，2022—2024.
+内蒙古农业大学 本科，2022—2026.
 
 #### Research Interests
 machine learning
