@@ -18,11 +18,3 @@ lizhongzheng1133@163.com
 
 #### Research Interests
 机器学习
-
-深度学习
-
-**Contest Awards**
-
-- 睿抗机器人开发者大赛 全国一等奖 2024-12
-
-  
