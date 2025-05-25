@@ -17,4 +17,4 @@ lizhongzheng1133@163.com
 内蒙古农业大学 本科，2022—2026.
 
 #### Research Interests
-机器学习
+深度学习 计算机视觉
