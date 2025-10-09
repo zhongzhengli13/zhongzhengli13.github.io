@@ -1,6 +1,6 @@
 
 
-[github Profile](https://github.com/zhongzhengli13)
+[Github Profile](https://github.com/zhongzhengli13)
 
 
 
