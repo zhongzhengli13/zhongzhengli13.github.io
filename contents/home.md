@@ -11,10 +11,10 @@
 #### Email
 878954714@qq.com
 
-lizhongzheng1133@163.com
-
 #### Education
 内蒙古农业大学 本科，2022—2026.
 
 #### Research Interests
-深度学习 计算机视觉
+深度学习 
+
+强化学习
