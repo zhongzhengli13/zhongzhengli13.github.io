@@ -3,7 +3,10 @@
 # A simple Github Pages template for academic personal website.
 
 ## Preview
-[![Screenshot of the Website](https://raw.githubusercontent.com/senli1073/senli1073.github.io/main/screenshot_full.png)](https://senli1073.github.io/)
+
+I replaced this with mine.🙃
+
+![image-20251010074727093](https://lzz-1340752507.cos.ap-shanghai.myqcloud.com/lzz/image-20251010074727093.png)
 
 
 ## Introduction
@@ -14,7 +17,7 @@ The template is designed to integrate Markdown files as content input.  There's 
 
 This template supports LaTeX formula input. You can use `$...$` and `\(...\)` as delimiters for inline-math, or use `$$...$$` and `\[...\]` as delimiters for display-math. Macros such as `\ref{...}`, `\eqref{...}`, and `\begin{equation}...\end{equation}` are also supported. See [MathJax](https://docs.mathjax.org/en/latest/index.html) for more details.
 
-:milky_way: Demo: https://senli1073.github.io/
+:milky_way: Demo: https://senli1073.github.io/   --->very nice!!!
 
 
 ## Getting Start
