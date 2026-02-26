@@ -10,6 +10,20 @@
     内蒙古农业大学
 </a>就读，2022级计算机科学与技术专业的学生。
 
+<hr>
+
+<h4>Curriculum Vitae</h4>
+
+<p>
+    📄 <a href="/assets/ZhongzhengLi_CV_2026.pdf" target="_blank" rel="noopener noreferrer">
+        View CV
+    </a>
+    &nbsp; | &nbsp;
+    📥 <a href="/assets/ZhongzhengLi_CV_2026.pdf" download>
+        Download CV
+    </a>
+</p>
+
 #### Contact
 878954714@qq.com
 
