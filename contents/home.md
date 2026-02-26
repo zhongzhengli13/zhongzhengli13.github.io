@@ -1,6 +1,6 @@
 
 
-[Github Profile](https://github.com/zhongzhengli13)
+<a href="https://github.com/zhongzhengli13" target="_blank">Github Profile</a>
 
 #### 个人介绍
 
