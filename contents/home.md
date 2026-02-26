@@ -11,19 +11,6 @@
 </a>就读，2022级计算机科学与技术专业的学生。
 
 <hr>
-
-<h4>Curriculum Vitae</h4>
-
-<p>
-    📄 <a href="/assets/ZhongzhengLi_CV_2025.pdf" target="_blank" rel="noopener noreferrer">
-        View CV
-    </a>
-    &nbsp;
-</p>
-
-#### Contact
-878954714@qq.com
-
 #### Education
 内蒙古农业大学 本科，2022—2026.
 
@@ -33,4 +20,8 @@
 ~~计算机视觉~~
 
 深度强化学习
+
+#### Contact
+
+878954714@qq.com
 
