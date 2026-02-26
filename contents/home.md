@@ -2,8 +2,6 @@
 
 [Github Profile](https://github.com/zhongzhengli13)
 
-[个人博客](https://www.cnblogs.com/zhongzhengli)
-
 #### 个人介绍
 
 我来自中国山东省，目前在<a href="https://www.imau.edu.cn/ndgk/ndjj.htm" target="_blank">
@@ -20,6 +18,13 @@
 ~~计算机视觉~~
 
 深度强化学习
+
+#### Links
+
+<p>
+<a href="https://github.com/zhongzhengli13" target="_blank">GitHub</a> |
+<a href="https://www.cnblogs.com/zhongzhengli" target="_blank">Blog</a>
+</p>
 
 #### Contact
 
