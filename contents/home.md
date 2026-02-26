@@ -18,10 +18,7 @@
     📄 <a href="/assets/ZhongzhengLi_CV_2025.pdf" target="_blank" rel="noopener noreferrer">
         View CV
     </a>
-    &nbsp; | &nbsp;
-    📥 <a href="/assets/ZhongzhengLi_CV_2025.pdf" download>
-        Download CV
-    </a>
+    &nbsp;
 </p>
 
 #### Contact
