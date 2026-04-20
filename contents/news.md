@@ -1,0 +1,1 @@
+- **[Apr 2026]** Working on integrating perception and locomotion control for bipedal robots, aiming to achieve robust and adaptive walking in complex environments.
