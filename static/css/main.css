@@ -21,7 +21,7 @@
         --h-title-color: #7b8ef8;
         --bg-primary: #1a1a2e;
         --bg-secondary: #16213e;
-        --text-primary: #e0e0e0;
+        --text-primary: #f0f0f0;
         --text-secondary: #a0a0a0;
         --nav-bg: #1a1a2e;
         --footer-bg: #0f0f1a;
@@ -68,7 +68,8 @@
     }
 
     section .main-body {
-        color: var(--text-primary);
+        color: var(--text-primary) !important;
+        font-weight: 400;
     }
 
     a {
@@ -180,14 +181,12 @@ section .main-body{
 
 @media screen and (max-width: 991px) {
     #avatar {
-        margin: 0 auto;
-        float: none;
-        text-align: center;
-        position: static;
-        margin-bottom: 1rem;
+        margin: 0 1rem 0 0;
+        float: right;
+        top: -60px;
     }
     #avatar img {
-        height: 120px;
+        height: 110px;
     }
 }
 
