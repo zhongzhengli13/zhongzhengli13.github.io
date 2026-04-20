@@ -1,12 +1,12 @@
-**竞赛获奖**
-- ICPC 丝绸之路中国邀请赛：银牌 2023-06
-- ICPC 西部赛：铜牌 2024-03
-- ICPC 丝绸之路中国邀请赛：银牌 2024-06
-- 睿抗机器人开发者大赛 国家一等奖 2024-11
+**Competition Awards**
+- ICPC Silk Road China Invitational: Silver Medal, 2023-06
+- ICPC Western Regional: Bronze Medal, 2024-03
+- ICPC Silk Road China Invitational: Silver Medal, 2024-06
+- RoboCom Robot Developer Competition: National First Prize, 2024-11
 
-**竞赛排名**
-- 天池大数据竞赛：地球观察员：建筑物识别学习赛 (rank: 63/6399) 2025-06
+**Competition Rankings**
+- Tianchi Big Data Competition — Building Recognition (Rank: 63/6399), 2025-06
 
-**奖学金**
-- 内蒙古自治区奖学金 2023-10
-- 国家奖学金 2024-09
+**Scholarships**
+- Inner Mongolia Autonomous Region Scholarship, 2023-10
+- National Scholarship, 2024-09

@@ -60,9 +60,10 @@ window.addEventListener('DOMContentLoaded', event => {
             .then(markdown => {
                 const html = marked.parse(markdown);
                 document.getElementById(name + '-md').innerHTML = html;
-            }).then(() => {
-                // MathJax
-                MathJax.typeset();
+                // Load MathJax only if math content is detected
+                if (/[$$]/.test(markdown) && typeof loadMathJax === 'function') {
+                    loadMathJax();
+                }
             })
             .catch(error => console.log(error));
     })

@@ -3,6 +3,81 @@
 
 :root{
     --h-title-color:#3948d2;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f0f0;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --nav-bg: #ffffff;
+    --footer-bg: var(--h-title-color);
+    --section-light: linear-gradient(45deg, #fcfcfc, #ffffff);
+    --section-gray: linear-gradient(45deg, #f0f0f0, #f1f1f1);
+    --link-color: #2937f0;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --h-title-color: #7b8ef8;
+        --bg-primary: #1a1a2e;
+        --bg-secondary: #16213e;
+        --text-primary: #e0e0e0;
+        --text-secondary: #a0a0a0;
+        --nav-bg: #1a1a2e;
+        --footer-bg: #0f0f1a;
+        --section-light: linear-gradient(45deg, #1a1a2e, #1e1e3a);
+        --section-gray: linear-gradient(45deg, #16213e, #1a1a2e);
+        --link-color: #7b8ef8;
+        --border-color: #333355;
+        --shadow-color: rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+
+    .header {
+        background-color: var(--nav-bg) !important;
+        border-bottom-color: var(--border-color) !important;
+    }
+
+    .navbar-light .navbar-brand,
+    .navbar-light .nav-link {
+        color: var(--text-primary) !important;
+    }
+
+    .top-section:before {
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .bg-gradient-primary-to-secondary-light {
+        background: var(--section-light) !important;
+    }
+
+    .bg-gradient-primary-to-secondary-gray {
+        background: var(--section-gray) !important;
+    }
+
+    .bg-bottom {
+        background-color: var(--footer-bg) !important;
+    }
+
+    section header h2 {
+        color: var(--h-title-color);
+    }
+
+    section .main-body {
+        color: var(--text-primary);
+    }
+
+    a {
+        color: var(--link-color);
+    }
+
+    #avatar img {
+        box-shadow: 5px 5px 5px var(--shadow-color);
+    }
 }
 
 .header {
@@ -105,7 +180,14 @@ section .main-body{
 
 @media screen and (max-width: 991px) {
     #avatar {
-        margin: 0;
+        margin: 0 auto;
+        float: none;
+        text-align: center;
+        position: static;
+        margin-bottom: 1rem;
+    }
+    #avatar img {
+        height: 120px;
     }
 }
 

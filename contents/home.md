@@ -1,30 +1,26 @@
 
 
-<a href="https://github.com/zhongzhengli13" target="_blank">Github Profile</a> |
+<a href="https://github.com/zhongzhengli13" target="_blank">Github</a> |
 <a href="assets/ZhongzhengLi_CV_2025.pdf" target="_blank">CV</a>
 
-#### 个人介绍
+#### About Me
 
-我来自中国山东省，目前在<a href="https://www.imau.edu.cn/ndgk/ndjj.htm" target="_blank">
-    内蒙古农业大学
-</a>就读，2022级计算机科学与技术专业的学生。
+I am from Shandong, China. Currently, I am an undergraduate student majoring in Computer Science and Technology at <a href="https://www.imau.edu.cn/ndgk/ndjj.htm" target="_blank">Inner Mongolia Agricultural University</a>.
 
 <hr>
 
 
 #### Education
 
-内蒙古农业大学 本科，2022—2026.
+B.Eng. in Computer Science and Technology, Inner Mongolia Agricultural University, 2022–2026.
 
-山东大学 硕士研究生，2026—2029.（保研）
+M.Eng. (upcoming), Shandong University, 2026–2029.
 
 #### Research Interests
 
-深度强化学习
-
-模仿学习
-
-机器人感知
+- Deep Reinforcement Learning
+- Imitation Learning
+- Robot Perception
 
 #### Links
 
