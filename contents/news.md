@@ -1,1 +1,1 @@
-- **[Apr 2026]** Working on integrating perception and locomotion control for bipedal robots, aiming to achieve robust and adaptive walking in complex environments.
+- **[2026年4月]** 正在研究感知与运控融合的双足机器人，致力于实现复杂环境下的鲁棒自适应行走。
