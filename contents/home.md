@@ -1,6 +1,7 @@
 
 
-<a href="https://github.com/zhongzhengli13" target="_blank">Github Profile</a>
+<a href="https://github.com/zhongzhengli13" target="_blank">Github Profile</a> |
+<a href="assets/ZhongzhengLi_CV_2025.pdf" target="_blank">CV</a>
 
 #### 个人介绍
 
@@ -18,7 +19,6 @@
 山东大学 硕士研究生，2026—2029.（保研）
 
 #### Research Interests
-~~计算机视觉~~
 
 深度强化学习
 
@@ -35,5 +35,5 @@
 
 #### Contact
 
-878954714@qq.com
+<a href="mailto:878954714@qq.com">878954714@qq.com</a>
 
