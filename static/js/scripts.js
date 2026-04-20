@@ -37,7 +37,12 @@ window.addEventListener('DOMContentLoaded', event => {
             const yml = jsyaml.load(text);
             Object.keys(yml).forEach(key => {
                 try {
-                    document.getElementById(key).innerHTML = yml[key];
+                    let val = yml[key];
+                    if (val === 'COPYRIGHT_PLACEHOLDER') {
+                        const year = new Date().getFullYear();
+                        val = `&copy; Zhongzheng Li 2022-${year}. All Rights Reserved.`;
+                    }
+                    document.getElementById(key).innerHTML = val;
                 } catch {
                     console.log("Unknown id and value: " + key + "," + yml[key].toString())
                 }

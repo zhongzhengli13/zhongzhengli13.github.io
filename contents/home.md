@@ -30,7 +30,8 @@
 
 <p>
 <a href="https://github.com/zhongzhengli13" target="_blank">GitHub</a> |
-<a href="https://www.cnblogs.com/zhongzhengli" target="_blank">Blog</a>
+<a href="https://www.cnblogs.com/zhongzhengli" target="_blank">Blog</a> |
+<a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">Google Scholar</a>
 </p>
 
 #### Contact
