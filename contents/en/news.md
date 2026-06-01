@@ -1,6 +1,6 @@
 - **[Apr 2026 - Present]** Working on integrating perception and locomotion control for bipedal robots, aiming to achieve robust and adaptive walking in complex environments.
 
 <div style="max-width:640px;margin:16px auto;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.15);">
-  <iframe src="https://drive.google.com/file/d/1ZnFVCW2loBCJj5KajFDZ1TqK8sQK-XC0/preview" style="display:block;width:100%;height:360px;border:0;" allow="autoplay; encrypted-media" allowfullscreen title="Bipedal Robot Demo"></iframe>
+  <iframe src="https://drive.google.com/file/d/1UOjEtsPszQT_raKZA8Jca4kDbzAm2FvV/preview" style="display:block;width:100%;height:360px;border:0;" allow="autoplay; encrypted-media" allowfullscreen title="Bipedal Robot Demo"></iframe>
 </div>
 <p style="text-align:center;font-size:0.9em;color:#666;">Demo Video — Perception-Integrated Locomotion Control for Bipedal Robots</p>
