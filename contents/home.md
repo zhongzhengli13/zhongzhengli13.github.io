@@ -1,7 +1,7 @@
 
 
 <a href="https://github.com/zhongzhengli13" target="_blank">Github</a> |
-<a href="javascript:void(0)" onclick="showCvToast()">CV</a>
+<a href="javascript:void(0)" onclick="showCvToast(this)">CV</a>
 
 #### 个人介绍
 

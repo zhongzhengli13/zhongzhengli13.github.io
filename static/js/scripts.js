@@ -44,22 +44,23 @@ function applyI18n() {
     document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
 }
 
-function showCvToast() {
+function showCvToast(el) {
     const lang = localStorage.getItem('lang') || 'zh';
     const msg = lang === 'en' ? 'CV is being updated~' : '正在更新中~';
-    let toast = document.querySelector('.cv-toast');
-    if (!toast) {
-        toast = document.createElement('div');
-        toast.className = 'cv-toast';
-        document.body.appendChild(toast);
-    }
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2000);
+    const existing = el.parentNode.querySelector('.cv-inline-toast');
+    if (existing) existing.remove();
+    const tip = document.createElement('span');
+    tip.className = 'cv-inline-toast';
+    tip.textContent = msg;
+    el.parentNode.insertBefore(tip, el.nextSibling);
+    setTimeout(() => tip.remove(), 2000);
 }
 
 function initHoverGalleries() {
     document.querySelectorAll('.hover-gallery').forEach(gallery => {
+        if (gallery.dataset.bound) return;
+        gallery.dataset.bound = '1';
+
         const trigger = gallery.querySelector('.hover-gallery-trigger');
         const images = JSON.parse(gallery.getAttribute('data-images'));
         let popup = null;
@@ -78,15 +79,18 @@ function initHoverGalleries() {
                 });
                 popup.appendChild(img);
             });
-            gallery.appendChild(popup);
+            popup.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+            popup.addEventListener('mouseleave', hidePopup);
+            document.body.appendChild(popup);
         }
 
         function showPopup() {
             clearTimeout(hideTimeout);
             if (!popup) createPopup();
             const rect = trigger.getBoundingClientRect();
-            popup.style.top = (rect.bottom + window.scrollY + 8) + 'px';
-            popup.style.left = rect.left + window.scrollX + 'px';
+            popup.style.position = 'fixed';
+            popup.style.top = (rect.bottom + 8) + 'px';
+            popup.style.left = rect.left + 'px';
             popup.classList.add('visible');
         }
 
@@ -99,7 +103,9 @@ function initHoverGalleries() {
         trigger.addEventListener('mouseenter', showPopup);
         trigger.addEventListener('mouseleave', hidePopup);
 
-        gallery.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+        gallery.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+        });
         gallery.addEventListener('mouseleave', hidePopup);
     });
 }
@@ -150,12 +156,12 @@ function loadContent() {
                 if (/[$$]/.test(markdown) && typeof loadMathJax === 'function') {
                     loadMathJax();
                 }
+                initHoverGalleries();
             })
             .catch(error => console.log(error));
     })
 
     applyI18n();
-    initHoverGalleries();
 }
 
 
