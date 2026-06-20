@@ -204,4 +204,109 @@ section .main-body{
     }
 }
 
+.cv-toast {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--h-title-color);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.cv-toast.show {
+    opacity: 1;
+}
+
+.hover-gallery {
+    display: inline-block;
+    margin: 8px 0 16px;
+}
+
+.hover-gallery-trigger {
+    color: var(--link-color);
+    cursor: pointer;
+    border-bottom: 1px dashed var(--link-color);
+    font-size: 0.95rem;
+    transition: border-bottom-color 0.2s;
+}
+
+.hover-gallery-trigger:hover {
+    border-bottom-style: solid;
+}
+
+.hover-gallery-popup {
+    position: absolute;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    z-index: 9998;
+    display: none;
+    gap: 8px;
+    max-width: 360px;
+}
+
+.hover-gallery-popup.visible {
+    display: flex;
+}
+
+.hover-gallery-popup img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.hover-gallery-popup img:hover {
+    transform: scale(1.08);
+}
+
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 100000;
+}
+
 

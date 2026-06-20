@@ -1,7 +1,7 @@
 
 
 <a href="https://github.com/zhongzhengli13" target="_blank">Github</a> |
-<a href="assets/ZhongzhengLi_CV_2025.pdf" target="_blank">CV</a>
+<a href="javascript:void(0)" onclick="showCvToast()">CV</a>
 
 #### About Me
 
