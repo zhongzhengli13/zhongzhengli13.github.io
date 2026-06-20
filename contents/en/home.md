@@ -5,7 +5,7 @@
 
 #### About Me
 
-I am from Shandong, China. Currently, I am an undergraduate student majoring in Computer Science and Technology at <a href="https://www.imau.edu.cn/ndgk/ndjj.htm" target="_blank">Inner Mongolia Agricultural University</a>.
+I am from Shandong, China. I received my B.Eng. degree in Computer Science and Technology from <a href="https://www.imau.edu.cn/ndgk/ndjj.htm" target="_blank">Inner Mongolia Agricultural University</a> in June 2026. I am now a graduate student at Shandong University (recommended admission).
 
 <hr>
 
@@ -14,7 +14,7 @@ I am from Shandong, China. Currently, I am an undergraduate student majoring in 
 
 B.Eng. in Computer Science and Technology, Inner Mongolia Agricultural University, 2022–2026.
 
-M.Eng. (upcoming), Shandong University, 2026–2029.
+M.Eng. (recommended admission), Shandong University, 2026–2029.
 
 #### Research Interests
 
