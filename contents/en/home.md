@@ -5,7 +5,7 @@
 
 #### About Me
 
-I am from Shandong, China. I received my B.Eng. degree in Computer Science and Technology from <a href="https://www.imau.edu.cn/ndgk/ndjj.htm" target="_blank">Inner Mongolia Agricultural University</a> in June 2026. I am now a graduate student at Shandong University (recommended admission).
+I am from Shandong, China. I received my B.Eng. degree in Computer Science and Technology from <a href="https://www.imau.edu.cn/ndgk/ndjj.htm" target="_blank">Inner Mongolia Agricultural University</a> in June 2026. I am now pursuing my M.Eng. at Shandong University via recommendation.
 
 <hr>
 
@@ -14,7 +14,7 @@ I am from Shandong, China. I received my B.Eng. degree in Computer Science and T
 
 B.Eng. in Computer Science and Technology, Inner Mongolia Agricultural University, 2022–2026.
 
-M.Eng. (recommended admission), Shandong University, 2026–2029.
+M.Eng., Shandong University, 2026–2029.
 
 #### Research Interests
 
