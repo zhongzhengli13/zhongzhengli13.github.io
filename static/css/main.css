@@ -222,16 +222,17 @@ section .main-body{
 }
 
 .hover-gallery {
-    display: inline-block;
-    margin: 8px 0 16px;
+    display: inline;
+    margin-left: 8px;
 }
 
 .hover-gallery-trigger {
     color: var(--link-color);
     cursor: pointer;
     border-bottom: 1px dashed var(--link-color);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: border-bottom-color 0.2s;
+    white-space: nowrap;
 }
 
 .hover-gallery-trigger:hover {

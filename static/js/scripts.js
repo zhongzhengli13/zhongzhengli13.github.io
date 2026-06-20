@@ -79,8 +79,14 @@ function initHoverGalleries() {
                 });
                 popup.appendChild(img);
             });
-            popup.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
-            popup.addEventListener('mouseleave', hidePopup);
+            popup.addEventListener('mouseenter', () => {
+                clearTimeout(hideTimeout);
+            });
+            popup.addEventListener('mouseleave', () => {
+                hideTimeout = setTimeout(() => {
+                    if (popup) popup.classList.remove('visible');
+                }, 300);
+            });
             document.body.appendChild(popup);
         }
 
@@ -89,7 +95,7 @@ function initHoverGalleries() {
             if (!popup) createPopup();
             const rect = trigger.getBoundingClientRect();
             popup.style.position = 'fixed';
-            popup.style.top = (rect.bottom + 8) + 'px';
+            popup.style.top = (rect.bottom + 6) + 'px';
             popup.style.left = rect.left + 'px';
             popup.classList.add('visible');
         }
@@ -97,16 +103,11 @@ function initHoverGalleries() {
         function hidePopup() {
             hideTimeout = setTimeout(() => {
                 if (popup) popup.classList.remove('visible');
-            }, 200);
+            }, 400);
         }
 
         trigger.addEventListener('mouseenter', showPopup);
         trigger.addEventListener('mouseleave', hidePopup);
-
-        gallery.addEventListener('mouseenter', () => {
-            clearTimeout(hideTimeout);
-        });
-        gallery.addEventListener('mouseleave', hidePopup);
     });
 }
 
