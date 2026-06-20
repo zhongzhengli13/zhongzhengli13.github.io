@@ -1,4 +1,4 @@
-- **[June 18, 2026]** Graduated from Inner Mongolia Agricultural University with a B.Eng. degree. <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg"]'><span class="hover-gallery-trigger">View Graduation Photos</span></span>
+- **[June 18, 2026]** Graduated from Inner Mongolia Agricultural University with a B.Eng. degree. <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg","static/assets/img/graduation_3.jpg"]'><span class="hover-gallery-trigger">View Graduation Photos</span></span>
 
 - **[Apr 2026 - Present]** Working on integrating perception and locomotion control for bipedal robots, aiming to achieve robust and adaptive walking in complex environments.
 

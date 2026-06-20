@@ -1,4 +1,4 @@
-- **[2026年6月18日]** 本科毕业于内蒙古农业大学。 <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg"]'><span class="hover-gallery-trigger">查看毕业照片</span></span>
+- **[2026年6月18日]** 本科毕业于内蒙古农业大学。 <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg","static/assets/img/graduation_3.jpg"]'><span class="hover-gallery-trigger">查看毕业照片</span></span>
 
 - **[2026年4月-至今]** 正在研究感知与运控融合的双足机器人，致力于实现复杂环境下的鲁棒自适应行走。
 
