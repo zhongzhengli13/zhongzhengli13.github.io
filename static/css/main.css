@@ -3,14 +3,14 @@
 
 :root{
     --h-title-color:#3948d2;
-    --bg-primary: #ffffff;
+    --bg-primary: #fafaf8;
     --bg-secondary: #f0f0f0;
     --text-primary: #212529;
     --text-secondary: #6c757d;
-    --nav-bg: #ffffff;
+    --nav-bg: #fafaf8;
     --footer-bg: var(--h-title-color);
-    --section-light: linear-gradient(45deg, #fcfcfc, #ffffff);
-    --section-gray: linear-gradient(45deg, #f0f0f0, #f1f1f1);
+    --section-light: linear-gradient(45deg, #fafaf8, #fafaf8);
+    --section-gray: linear-gradient(45deg, #f3f3f0, #f3f3f0);
     --link-color: #2937f0;
     --border-color: #dee2e6;
     --shadow-color: rgba(0, 0, 0, 0.2);
@@ -79,6 +79,16 @@
     #avatar img {
         box-shadow: 5px 5px 5px var(--shadow-color);
     }
+
+    .bg-gradient-primary-to-secondary-light,
+    .bg-gradient-primary-to-secondary-gray {
+        background-image: radial-gradient(circle, #2a2a4a 0.5px, transparent 0.5px) !important;
+    }
+
+    section + section::before {
+        background: linear-gradient(90deg, transparent, var(--h-title-color), transparent);
+        opacity: 0.15;
+    }
 }
 
 .header {
@@ -132,11 +142,31 @@ section .main-body{
 
 
 .bg-gradient-primary-to-secondary-light {
-    background: linear-gradient(45deg, #fcfcfc, #ffffff) !important;
+    background: linear-gradient(45deg, #fafaf8, #fafaf8) !important;
+    background-image: radial-gradient(circle, #d0d0cc 0.5px, transparent 0.5px) !important;
+    background-size: 20px 20px !important;
 }
 
 .bg-gradient-primary-to-secondary-gray {
-    background: linear-gradient(45deg, #f0f0f0, #f1f1f1) !important;
+    background: linear-gradient(45deg, #f3f3f0, #f3f3f0) !important;
+    background-image: radial-gradient(circle, #d0d0cc 0.5px, transparent 0.5px) !important;
+    background-size: 20px 20px !important;
+}
+
+section {
+    position: relative;
+}
+
+section + section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--h-title-color), transparent);
+    opacity: 0.25;
+    z-index: 1;
 }
 
 
