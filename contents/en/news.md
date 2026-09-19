@@ -1,9 +1,9 @@
 <div class="timeline">
   <article class="timeline-item">
-    <time>2026.09.20 (planned)</time>
+    <time>2026.09.20 - 09.27</time>
     <div>
       <h3>Mathematical Modeling Competition</h3>
-      <p>Planning to take part in a mathematical modeling competition to further develop modeling, analysis, and collaboration skills.</p>
+      <p>Participating in a mathematical modeling competition to further develop modeling, analysis, and collaboration skills.</p>
     </div>
   </article>
 
@@ -16,6 +16,14 @@
   </article>
 
   <article class="timeline-item">
+    <time>2026.04 - Present</time>
+    <div>
+      <h3>Perception-Integrated Locomotion Control</h3>
+      <p>Started focusing on integrating perception and locomotion control for bipedal robots, aiming to achieve robust and adaptive walking in complex environments. The related demo is available under <a href="#projects">Projects</a>.</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
     <time>2026.06.18</time>
     <div>
       <h3>B.Eng. Graduation</h3>
@@ -23,14 +31,6 @@
         Received my B.Eng. degree in Computer Science and Technology from Inner Mongolia Agricultural University.
         <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg","static/assets/img/graduation_3.jpg"]'><span class="hover-gallery-trigger">View graduation photos</span></span>
       </p>
-    </div>
-  </article>
-
-  <article class="timeline-item">
-    <time>2026.04 - Present</time>
-    <div>
-      <h3>Perception-Integrated Locomotion Control</h3>
-      <p>Started focusing on integrating perception and locomotion control for bipedal robots, aiming to achieve robust and adaptive walking in complex environments. The related demo is available under <a href="#projects">Projects</a>.</p>
     </div>
   </article>
 </div>

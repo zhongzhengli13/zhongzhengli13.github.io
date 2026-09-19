@@ -6,13 +6,12 @@
     <div class="project-tags"><span>Perception</span><span>Locomotion</span><span>Reinforcement Learning</span></div>
     <div class="project-video-grid">
       <div class="media-frame">
-        <iframe src="https://player.bilibili.com/player.html?bvid=BV1Xubj6GEFr&amp;page=1&amp;high_quality=1&amp;danmaku=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="Bilibili robot project demo 1"></iframe>
+        <iframe src="https://player.bilibili.com/player.html?bvid=BV1Xubj6GEFr&amp;page=1&amp;high_quality=1&amp;danmaku=0&amp;autoplay=0" allow="encrypted-media; fullscreen" allowfullscreen title="Bilibili robot project demo 1"></iframe>
       </div>
       <div class="media-frame">
-        <iframe src="https://player.bilibili.com/player.html?bvid=BV1Eh8X6oEHT&amp;page=1&amp;high_quality=1&amp;danmaku=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="Bilibili robot project demo 2"></iframe>
+        <iframe src="https://player.bilibili.com/player.html?bvid=BV1Eh8X6oEHT&amp;page=1&amp;high_quality=1&amp;danmaku=0&amp;autoplay=0" allow="encrypted-media; fullscreen" allowfullscreen title="Bilibili robot project demo 2"></iframe>
       </div>
     </div>
-    <p class="media-caption"><a href="https://www.bilibili.com/video/BV1Xubj6GEFr/" target="_blank" rel="noopener">Open video 1 on Bilibili</a> · <a href="https://www.bilibili.com/video/BV1Eh8X6oEHT/" target="_blank" rel="noopener">Open video 2 on Bilibili</a></p>
   </article>
 
   <article class="project-card">
