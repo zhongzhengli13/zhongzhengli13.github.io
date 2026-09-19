@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Zhongzheng Li - Graduate student at Shandong University, researching Deep Reinforcement Learning, Imitation Learning, and Robot Perception" />
+    <meta name="description" content="Zhongzheng Li - Graduate student at Shandong University researching learning-based control for humanoid robots, perceptive locomotion, and sim-to-real transfer." />
     <meta name="author" content="Zhongzheng Li" />
-    <meta name="keywords" content="Zhongzheng Li, 李中政, Deep Reinforcement Learning, Imitation Learning, Robot Perception, Shandong University" />
+    <meta name="keywords" content="Zhongzheng Li, 李中政, Humanoid Robotics, Perceptive Locomotion, Reinforcement Learning, Sim-to-Real, Whole-Body Control, Shandong University" />
     <meta property="og:title" content="Zhongzheng Li's Homepage" />
-    <meta property="og:description" content="Graduate student at Shandong University, researching Deep Reinforcement Learning, Imitation Learning, and Robot Perception" />
+    <meta property="og:description" content="Learning-based control for humanoid robots, with a focus on perceptive locomotion and sim-to-real transfer." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://zhongzhengli13.github.io/" />
     <meta property="og:image" content="https://zhongzhengli13.github.io/static/assets/img/photo.jpg" />
@@ -16,7 +16,7 @@
     <meta property="og:locale:alternate" content="zh_CN" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Zhongzheng Li's Homepage" />
-    <meta name="twitter:description" content="Graduate student at Shandong University, researching Deep Reinforcement Learning, Imitation Learning, and Robot Perception" />
+    <meta name="twitter:description" content="Learning-based control for humanoid robots, with a focus on perceptive locomotion and sim-to-real transfer." />
     <meta name="twitter:image" content="https://zhongzhengli13.github.io/static/assets/img/photo.jpg" />
     <link rel="canonical" href="https://zhongzhengli13.github.io/" />
     <title id="title"></title>
@@ -47,10 +47,11 @@
         },
         "sameAs": [
             "https://github.com/zhongzhengli13",
-            "https://www.cnblogs.com/zhongzhengli"
+            "https://www.cnblogs.com/zhongzhengli",
+            "https://space.bilibili.com/519084825"
         ],
         "email": "878954714@qq.com",
-        "knowsAbout": ["Deep Reinforcement Learning", "Imitation Learning", "Robot Perception"]
+        "knowsAbout": ["Humanoid Robotics", "Perceptive Locomotion", "Reinforcement Learning", "Sim-to-Real Transfer", "Whole-Body Control"]
     }
     </script>
 
@@ -122,6 +123,9 @@
                         <a class="nav-link me-lg-3" href="#page-top" data-i18n="nav-home">首页</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link me-lg-3" href="#projects" data-i18n="nav-projects">项目</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link me-lg-3" href="#news" data-i18n="nav-news">动态</a>
                     </li>
                     <li class="nav-item">
@@ -157,6 +161,17 @@
     <!-- Photo -->
 
     <!-- Home -->
+
+    <!-- Selected Projects -->
+    <section class="bg-gradient-primary-to-secondary-gray mt5 md5" id="projects">
+        <div class="container px-5">
+            <header>
+                <h2 id="projects-subtitle"></h2>
+            </header>
+            <div class="main-body" id="projects-md"></div>
+        </div>
+    </section>
+    <!-- Selected Projects -->
     <section class="bg-gradient-primary-to-secondary-light mt5 md5" id="home">
         <div class="container px-5">
             <header>
@@ -209,6 +224,9 @@
             <button class="mascot-action mascot-theme" type="button" data-dock-theme aria-label="Toggle dark mode">
                 <i class="bi bi-moon-stars"></i>
             </button>
+            <button class="mascot-action mascot-music" type="button" data-dock-music aria-label="Open music player" aria-expanded="false">
+                <i class="bi bi-music-note-beamed"></i>
+            </button>
             <button class="mascot-action" type="button" data-dock-top aria-label="Back to top">
                 <i class="bi bi-arrow-up"></i>
             </button>
@@ -219,6 +237,19 @@
         </button>
     </div>
 
+    <aside class="music-player" id="music-player" aria-label="Music player" aria-hidden="true">
+        <div class="music-player-header">
+            <div>
+                <span class="music-player-kicker" data-i18n="music-kicker">LISTENING CORNER</span>
+                <strong data-i18n="music-title">A small playlist</strong>
+            </div>
+            <button class="music-close" type="button" data-music-close aria-label="Close music player"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <p class="music-empty" data-i18n="music-empty">Add your own audio links in scripts.js to start listening.</p>
+        <div class="music-track-list" id="music-track-list"></div>
+        <audio id="music-audio" preload="none"></audio>
+    </aside>
+
     <!-- Footer-->
     <footer class="bg-bottom text-center py-5">
         <div class="container px-5">
@@ -228,6 +259,8 @@
                 <a id="github-link" href="https://github.com/zhongzhengli13">Github</a>
                 <span class="mx-1">&middot;</span>
                 <a href="https://www.cnblogs.com/zhongzhengli">Blog</a>
+                <span class="mx-1">&middot;</span>
+                <a href="https://space.bilibili.com/519084825" target="_blank" rel="noopener">Bilibili</a>
                 <span class="mx-1">&middot;</span>
                 <a href="mailto:878954714@qq.com">Email</a>
                 <span class="mx-1">&middot;</span>

@@ -1,26 +1,36 @@
 
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'news', 'publications', 'awards']
+const section_names = ['home', 'projects', 'news', 'publications', 'awards']
 
 const i18n = {
     zh: {
         'nav-home': '首页',
+        'nav-projects': '项目',
         'nav-news': '动态',
         'nav-pubs': '论文',
         'nav-awards': '奖项',
+        'projects-subtitle': '<i class="bi bi-robot"></i>&nbsp;代表项目',
         'news-subtitle': '<i class="bi bi-lightning-fill"></i>&nbsp;动态',
         'publications-subtitle': '<i class="bi bi-file-text-fill"></i>&nbsp;论文',
-        'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;奖项'
+        'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;奖项',
+        'music-kicker': 'LISTENING CORNER',
+        'music-title': '一小段音乐时间',
+        'music-empty': '在 scripts.js 的 musicTracks 中添加自己的音频链接后，即可开始播放。'
     },
     en: {
         'nav-home': 'HOME',
+        'nav-projects': 'PROJECTS',
         'nav-news': 'NEWS',
         'nav-pubs': 'PUBLICATIONS',
         'nav-awards': 'AWARDS',
+        'projects-subtitle': '<i class="bi bi-robot"></i>&nbsp;SELECTED PROJECTS',
         'news-subtitle': '<i class="bi bi-lightning-fill"></i>&nbsp;NEWS',
         'publications-subtitle': '<i class="bi bi-file-text-fill"></i>&nbsp;PUBLICATIONS',
-        'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;AWARDS'
+        'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;AWARDS',
+        'music-kicker': 'LISTENING CORNER',
+        'music-title': 'A small playlist',
+        'music-empty': 'Add your own audio links to musicTracks in scripts.js to start listening.'
     }
 }
 
@@ -36,12 +46,60 @@ function applyI18n() {
         const key = el.getAttribute('data-i18n');
         if (strings[key]) el.textContent = strings[key];
     });
-    ['news-subtitle', 'publications-subtitle', 'awards-subtitle'].forEach(id => {
+    ['projects-subtitle', 'news-subtitle', 'publications-subtitle', 'awards-subtitle'].forEach(id => {
         const el = document.getElementById(id);
         if (el && strings[id]) el.innerHTML = strings[id];
     });
     document.getElementById('lang-toggle').textContent = currentLang === 'zh' ? 'EN' : '中';
     document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+}
+
+// Add only music you own or are licensed to redistribute. Example:
+// { title: 'Track title', artist: 'Artist', src: 'static/assets/audio/track.mp3' }
+const musicTracks = [];
+
+function initMusicPlayer() {
+    const dock = document.getElementById('mascot-dock');
+    const button = dock?.querySelector('[data-dock-music]');
+    const player = document.getElementById('music-player');
+    const close = player?.querySelector('[data-music-close]');
+    const audio = document.getElementById('music-audio');
+    const list = document.getElementById('music-track-list');
+    const empty = player?.querySelector('.music-empty');
+    if (!dock || !button || !player || !close || !audio || !list || !empty) return;
+
+    const setOpen = (isOpen) => {
+        player.classList.toggle('is-open', isOpen);
+        player.setAttribute('aria-hidden', String(!isOpen));
+        button.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    musicTracks.forEach((track, index) => {
+        const item = document.createElement('button');
+        item.className = 'music-track';
+        item.type = 'button';
+        item.innerHTML = `<i class="bi bi-play-fill"></i><span><strong>${track.title}</strong><small>${track.artist || ''}</small></span>`;
+        item.addEventListener('click', () => {
+            const sameTrack = audio.src === new URL(track.src, window.location.href).href;
+            document.querySelectorAll('.music-track').forEach(el => el.classList.remove('is-playing'));
+            if (sameTrack && !audio.paused) {
+                audio.pause();
+                return;
+            }
+            if (!sameTrack) audio.src = track.src;
+            audio.play().then(() => item.classList.add('is-playing')).catch(() => {});
+        });
+        list.appendChild(item);
+    });
+    empty.hidden = musicTracks.length > 0;
+
+    button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        setOpen(!player.classList.contains('is-open'));
+    });
+    close.addEventListener('click', () => setOpen(false));
+    player.addEventListener('click', event => event.stopPropagation());
+    document.addEventListener('click', () => setOpen(false));
 }
 
 function showCvToast() {
@@ -299,5 +357,6 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     initMascotDock();
+    initMusicPlayer();
     loadContent();
 });

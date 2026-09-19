@@ -460,6 +460,57 @@ section + section::before {
     font-weight: 700;
 }
 
+.project-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.85fr);
+    gap: 1rem;
+}
+
+.project-card {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--panel-bg);
+    box-shadow: 0 10px 30px rgba(33, 37, 41, 0.06);
+}
+
+.project-card h3 {
+    margin: 0 0 0.55rem;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.project-label,
+.music-player-kicker {
+    color: var(--accent-green);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.9rem 0;
+}
+
+.project-tags span {
+    padding: 0.14rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(57, 72, 210, 0.1);
+    color: var(--h-title-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
 .timeline {
     position: relative;
     display: grid;
@@ -587,6 +638,7 @@ section + section::before {
     }
 
     .profile-grid,
+    .project-grid,
     .award-grid {
         grid-template-columns: 1fr;
     }
@@ -834,6 +886,10 @@ section + section::before {
 }
 
 .mascot-dock.is-open .mascot-action:nth-child(2) {
+    transform: translate3d(-66px, -65px, 0) scale(1);
+}
+
+.mascot-dock.is-open .mascot-action:nth-child(3) {
     transform: translate3d(-18px, -62px, 0) scale(1);
 }
 
@@ -859,15 +915,96 @@ section + section::before {
     }
 }
 
-#home, #news, #publications, #awards {
+#home, #projects, #news, #publications, #awards {
     opacity: 0;
     animation: fadeSlideUp 0.6s ease forwards;
 }
 
 #home { animation-delay: 0.1s; }
-#news { animation-delay: 0.2s; }
-#publications { animation-delay: 0.3s; }
-#awards { animation-delay: 0.4s; }
+#projects { animation-delay: 0.2s; }
+#news { animation-delay: 0.3s; }
+#publications { animation-delay: 0.4s; }
+#awards { animation-delay: 0.5s; }
+
+.music-player {
+    position: fixed;
+    right: 22px;
+    bottom: 104px;
+    z-index: 10009;
+    width: min(330px, calc(100vw - 2rem));
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--panel-bg);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(14px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px) scale(0.98);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.music-player.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.music-player-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.music-player-header strong {
+    display: block;
+    margin-top: 0.16rem;
+    color: var(--text-primary);
+}
+
+.music-close {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.music-close:hover { background: var(--bg-secondary); color: var(--text-primary); }
+
+.music-empty {
+    margin: 0.9rem 0 0;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.music-track-list { display: grid; gap: 0.35rem; margin-top: 0.8rem; }
+
+.music-track {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+    padding: 0.55rem;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+}
+
+.music-track:hover, .music-track.is-playing { border-color: var(--border-color); background: var(--bg-secondary); }
+.music-track.is-playing { color: var(--h-title-color); }
+.music-track > i { font-size: 1rem; }
+.music-track span { display: grid; gap: 0.04rem; }
+.music-track small { color: var(--text-secondary); }
 
 .main-body a {
     transition: color 0.2s ease;
@@ -923,7 +1060,16 @@ a {
     }
 
     .mascot-dock.is-open .mascot-action:nth-child(2) {
+        transform: translate3d(-56px, -56px, 0) scale(1);
+    }
+
+    .mascot-dock.is-open .mascot-action:nth-child(3) {
         transform: translate3d(-14px, -54px, 0) scale(1);
+    }
+
+    .music-player {
+        right: 12px;
+        bottom: 84px;
     }
 }
 

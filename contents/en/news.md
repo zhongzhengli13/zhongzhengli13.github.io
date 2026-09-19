@@ -14,11 +14,7 @@
     <time>2026.04 - Present</time>
     <div>
       <h3>Perception-Integrated Locomotion Control</h3>
-      <p>Working on integrating perception and locomotion control for bipedal robots, aiming to achieve robust and adaptive walking in complex environments.</p>
-      <div class="media-frame">
-        <iframe src="https://drive.google.com/file/d/17-Z-l5Jf8MS8OazmsAAUNeVLraz-c7sh/preview" allow="autoplay; encrypted-media" allowfullscreen title="Bipedal Robot Demo"></iframe>
-      </div>
-      <p class="media-caption">Demo video: perception-integrated locomotion control for bipedal robots</p>
+      <p>Started focusing on integrating perception and locomotion control for bipedal robots, aiming to achieve robust and adaptive walking in complex environments. The related demo is featured in <a href="#projects">Selected Projects</a>.</p>
     </div>
   </article>
 </div>

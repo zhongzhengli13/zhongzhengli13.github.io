@@ -2,12 +2,13 @@
   <article class="profile-panel profile-panel-main">
     <div class="section-kicker">About Me</div>
     <p>
-      我目前是山东大学硕士研究生，研究兴趣包括深度强化学习、模仿学习与机器人感知，关注智能体在复杂环境中的鲁棒决策与自适应运动控制。
-      本科毕业于内蒙古农业大学计算机科学与技术专业。学习期间参与过数据处理、算法竞赛和计算机视觉相关工作，并逐步将兴趣聚焦到机器人学习、感知与决策方向。
+      我目前是山东大学硕士研究生，研究面向人形机器人的学习型运动控制，重点关注感知驱动运动、全身技能学习以及仿真到现实迁移。
+      我希望让机器人能够感知复杂环境，并以鲁棒、自适应的方式完成运动与决策。本科毕业于内蒙古农业大学计算机科学与技术专业。
     </p>
     <div class="quick-links">
       <a href="https://github.com/zhongzhengli13" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.cnblogs.com/zhongzhengli" target="_blank" rel="noopener">Blog</a>
+      <a href="https://space.bilibili.com/519084825" target="_blank" rel="noopener">Bilibili</a>
       <button type="button" data-cv-toast>CV</button>
       <a href="mailto:878954714@qq.com">Email</a>
     </div>
@@ -21,14 +22,15 @@
     </ul>
     <div class="focus-block">
       <div class="section-kicker">Current Focus</div>
-      <p>面向复杂环境的感知驱动运动控制与机器人学习。</p>
+      <p>面向复杂环境的人形机器人感知驱动运动控制与仿真到现实迁移。</p>
     </div>
   </aside>
 </div>
 
 <div class="research-strip">
-  <span>Deep Reinforcement Learning</span>
-  <span>Imitation Learning</span>
-  <span>Robot Perception</span>
-  <span>Robust Locomotion</span>
+  <span>Humanoid Robotics</span>
+  <span>Perceptive Locomotion</span>
+  <span>Reinforcement Learning</span>
+  <span>Sim-to-Real Transfer</span>
+  <span>Whole-Body Control</span>
 </div>
