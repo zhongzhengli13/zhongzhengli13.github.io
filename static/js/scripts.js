@@ -10,7 +10,7 @@ const i18n = {
         'nav-news': '动态',
         'nav-pubs': '论文',
         'nav-awards': '奖项',
-        'projects-subtitle': '<i class="bi bi-robot"></i>&nbsp;代表项目',
+        'projects-subtitle': '<i class="bi bi-robot"></i>&nbsp;项目',
         'news-subtitle': '<i class="bi bi-lightning-fill"></i>&nbsp;动态',
         'publications-subtitle': '<i class="bi bi-file-text-fill"></i>&nbsp;论文',
         'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;奖项',
@@ -24,7 +24,7 @@ const i18n = {
         'nav-news': 'NEWS',
         'nav-pubs': 'PUBLICATIONS',
         'nav-awards': 'AWARDS',
-        'projects-subtitle': '<i class="bi bi-robot"></i>&nbsp;SELECTED PROJECTS',
+        'projects-subtitle': '<i class="bi bi-robot"></i>&nbsp;PROJECTS',
         'news-subtitle': '<i class="bi bi-lightning-fill"></i>&nbsp;NEWS',
         'publications-subtitle': '<i class="bi bi-file-text-fill"></i>&nbsp;PUBLICATIONS',
         'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;AWARDS',
@@ -56,7 +56,9 @@ function applyI18n() {
 
 // Add only music you own or are licensed to redistribute. Example:
 // { title: 'Track title', artist: 'Artist', src: 'static/assets/audio/track.mp3' }
-const musicTracks = [];
+const musicTracks = [
+    { title: '我记得', artist: '赵雷', src: 'static/assets/audio/zhao-lei-i-remember.mp3' }
+];
 
 function initMusicPlayer() {
     const dock = document.getElementById('mascot-dock');

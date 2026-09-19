@@ -502,6 +502,16 @@ section + section::before {
     margin: 0.9rem 0;
 }
 
+.project-video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.project-video-grid .media-frame {
+    margin: 0;
+}
+
 .project-tags span {
     padding: 0.14rem 0.5rem;
     border-radius: 999px;
@@ -640,6 +650,10 @@ section + section::before {
     .profile-grid,
     .project-grid,
     .award-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-video-grid {
         grid-template-columns: 1fr;
     }
 
