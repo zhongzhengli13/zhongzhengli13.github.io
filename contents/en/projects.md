@@ -7,9 +7,11 @@
     <div class="project-video-grid">
       <div class="media-frame">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid=BV1Xubj6GEFr&amp;page=1&amp;high_quality=1&amp;danmaku=0&amp;autoplay=0" scrolling="no" frameborder="0" allow="encrypted-media; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Bilibili robot project demo 1"></iframe>
+        <button class="video-stop" type="button" data-video-stop aria-label="Stop and reset video" title="Stop and reset video"><i class="bi bi-stop-fill"></i></button>
       </div>
       <div class="media-frame">
         <iframe src="https://player.bilibili.com/player.html?isOutside=true&amp;bvid=BV1Eh8X6oEHT&amp;page=1&amp;high_quality=1&amp;danmaku=0&amp;autoplay=0" scrolling="no" frameborder="0" allow="encrypted-media; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="Bilibili robot project demo 2"></iframe>
+        <button class="video-stop" type="button" data-video-stop aria-label="Stop and reset video" title="Stop and reset video"><i class="bi bi-stop-fill"></i></button>
       </div>
     </div>
   </article>
