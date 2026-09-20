@@ -574,7 +574,6 @@ section + section::before {
 }
 
 .media-frame {
-    position: relative;
     max-width: 680px;
     margin: 1rem 0 0.35rem;
     overflow: hidden;
@@ -590,39 +589,6 @@ section + section::before {
     width: 100%;
     height: 100%;
     border: 0;
-}
-
-.video-stop {
-    position: absolute;
-    top: 0.55rem;
-    right: 0.55rem;
-    z-index: 2;
-    display: grid;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    border-radius: 50%;
-    background: rgba(20, 24, 30, 0.72);
-    color: #fff;
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.18s ease, background-color 0.18s ease;
-}
-
-.media-frame:hover .video-stop,
-.media-frame:focus-within .video-stop {
-    opacity: 1;
-}
-
-.video-stop:hover,
-.video-stop:focus-visible {
-    background: var(--accent-rose);
-    outline: none;
-}
-
-@media (hover: none) {
-    .video-stop { opacity: 1; }
 }
 
 .media-caption {

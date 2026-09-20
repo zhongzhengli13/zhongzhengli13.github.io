@@ -104,25 +104,6 @@ function initMusicPlayer() {
     document.addEventListener('click', () => setOpen(false));
 }
 
-function initEmbeddedVideoStops() {
-    document.addEventListener('click', (event) => {
-        const button = event.target.closest('[data-video-stop]');
-        if (!button) return;
-
-        const frame = button.closest('.media-frame');
-        const video = frame?.querySelector('iframe');
-        if (!video) return;
-
-        // Bilibili's external iframe has no stable public pause API. Resetting
-        // its document reliably terminates both playback and audio, then
-        // restores the original player in its non-autoplay state.
-        const source = video.getAttribute('src');
-        if (!source) return;
-        video.setAttribute('src', 'about:blank');
-        requestAnimationFrame(() => video.setAttribute('src', source));
-    });
-}
-
 function showCvToast() {
     const lang = localStorage.getItem('lang') || 'zh';
     const title = lang === 'en' ? 'CV is being updated' : 'CV 正在更新中';
@@ -379,6 +360,5 @@ window.addEventListener('DOMContentLoaded', event => {
 
     initMascotDock();
     initMusicPlayer();
-    initEmbeddedVideoStops();
     loadContent();
 });
