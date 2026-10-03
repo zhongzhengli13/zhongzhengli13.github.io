@@ -192,7 +192,8 @@ function initHoverGalleries() {
             if (pinned) return;
             clearTimeout(hideTimeout);
             hideTimeout = setTimeout(() => {
-                if (!gallery.contains(document.activeElement)) closePopup();
+                const focused = document.activeElement;
+                if (!gallery.contains(focused) || !focused.matches(':focus-visible')) closePopup();
             }, 300);
         }
 
@@ -200,7 +201,12 @@ function initHoverGalleries() {
             if (window.matchMedia('(hover: hover)').matches) showPopup();
         });
         trigger.addEventListener('mouseleave', hidePopup);
-        trigger.addEventListener('click', () => {
+        trigger.addEventListener('click', event => {
+            // Mouse users keep the hover interaction; touch and keyboard can pin it open.
+            if (event.detail > 0 && window.matchMedia('(hover: hover)').matches) {
+                showPopup();
+                return;
+            }
             if (pinned) closePopup();
             else { pinned = true; showPopup(); }
         });
