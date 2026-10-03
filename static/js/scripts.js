@@ -125,6 +125,12 @@ function showCvToast() {
     }, 2600);
 }
 
+function closeHoverGalleries() {
+    document.querySelectorAll('.hover-gallery').forEach(gallery => {
+        gallery.dispatchEvent(new Event('galleryclose'));
+    });
+}
+
 function initHoverGalleries() {
     document.querySelectorAll('.hover-gallery').forEach(gallery => {
         if (gallery.dataset.bound) return;
@@ -134,63 +140,106 @@ function initHoverGalleries() {
         const images = JSON.parse(gallery.getAttribute('data-images'));
         let popup = null;
         let hideTimeout = null;
+        let pinned = false;
+
+        function closePopup() {
+            clearTimeout(hideTimeout);
+            pinned = false;
+            popup?.classList.remove('visible');
+            trigger.setAttribute('aria-expanded', 'false');
+        }
 
         function createPopup() {
-            popup = document.createElement('div');
+            popup = document.createElement('span');
             popup.className = 'hover-gallery-popup';
-            images.forEach(src => {
+            popup.id = 'graduation-gallery-' + document.querySelectorAll('.hover-gallery-popup').length;
+            popup.setAttribute('role', 'group');
+            popup.setAttribute('aria-label', currentLang === 'en' ? 'Graduation photos' : '毕业照片');
+            trigger.setAttribute('aria-controls', popup.id);
+            images.forEach((src, index) => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'gallery-photo';
+                const label = currentLang === 'en' ? `Graduation photo ${index + 1}` : `毕业照片 ${index + 1}`;
+                button.setAttribute('aria-label', label);
                 const img = document.createElement('img');
                 img.src = src;
+                img.alt = label;
                 img.loading = 'lazy';
-                img.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    openLightbox(src);
-                });
-                popup.appendChild(img);
+                button.appendChild(img);
+                button.addEventListener('click', () => openLightbox(src, label));
+                popup.appendChild(button);
             });
-            popup.addEventListener('mouseenter', () => {
-                clearTimeout(hideTimeout);
-            });
-            popup.addEventListener('mouseleave', () => {
-                hideTimeout = setTimeout(() => {
-                    if (popup) popup.classList.remove('visible');
-                }, 300);
-            });
-            document.body.appendChild(popup);
+            popup.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+            popup.addEventListener('mouseleave', hidePopup);
+            gallery.appendChild(popup);
         }
 
         function showPopup() {
             clearTimeout(hideTimeout);
             if (!popup) createPopup();
-            const rect = trigger.getBoundingClientRect();
-            popup.style.position = 'fixed';
-            popup.style.top = (rect.bottom + 6) + 'px';
-            popup.style.left = rect.left + 'px';
             popup.classList.add('visible');
+            trigger.setAttribute('aria-expanded', 'true');
+            const rect = trigger.getBoundingClientRect();
+            const width = popup.offsetWidth;
+            const height = popup.offsetHeight;
+            popup.style.left = Math.max(12, Math.min(rect.left, window.innerWidth - width - 12)) + 'px';
+            const top = rect.bottom + height + 12 <= window.innerHeight ? rect.bottom + 6 : rect.top - height - 6;
+            popup.style.top = Math.max(12, top) + 'px';
         }
 
         function hidePopup() {
+            if (pinned) return;
+            clearTimeout(hideTimeout);
             hideTimeout = setTimeout(() => {
-                if (popup) popup.classList.remove('visible');
-            }, 400);
+                if (!gallery.contains(document.activeElement)) closePopup();
+            }, 300);
         }
 
-        trigger.addEventListener('mouseenter', showPopup);
+        trigger.addEventListener('mouseenter', () => {
+            if (window.matchMedia('(hover: hover)').matches) showPopup();
+        });
         trigger.addEventListener('mouseleave', hidePopup);
+        trigger.addEventListener('click', () => {
+            if (pinned) closePopup();
+            else { pinned = true; showPopup(); }
+        });
+        gallery.addEventListener('focusin', showPopup);
+        gallery.addEventListener('focusout', hidePopup);
+        gallery.addEventListener('galleryclose', closePopup);
+        gallery.addEventListener('galleryreposition', () => {
+            if (!popup?.classList.contains('visible')) return;
+            const rect = trigger.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > window.innerHeight) closePopup();
+            else showPopup();
+        });
     });
 }
 
-function openLightbox(src) {
+function openLightbox(src, alt) {
     let overlay = document.querySelector('.lightbox-overlay');
     if (!overlay) {
-        overlay = document.createElement('div');
+        overlay = document.createElement('dialog');
         overlay.className = 'lightbox-overlay';
-        overlay.innerHTML = '<span class="lightbox-close">&times;</span><img>';
-        overlay.addEventListener('click', () => overlay.classList.remove('active'));
+        overlay.innerHTML = '<button type="button" class="lightbox-close">&times;</button><img>';
+        overlay.querySelector('button').addEventListener('click', () => overlay.close());
+        overlay.addEventListener('click', event => {
+            if (event.target === overlay) overlay.close();
+        });
+        overlay.addEventListener('close', () => {
+            document.body.style.overflow = overlay.dataset.previousOverflow;
+        });
         document.body.appendChild(overlay);
     }
+    overlay.setAttribute('aria-label', currentLang === 'en' ? 'Photo viewer' : '照片查看器');
+    overlay.querySelector('button').setAttribute('aria-label', currentLang === 'en' ? 'Close photo' : '关闭照片');
     overlay.querySelector('img').src = src;
-    overlay.classList.add('active');
+    overlay.querySelector('img').alt = alt;
+    if (!overlay.open) {
+        overlay.dataset.previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        overlay.showModal();
+    }
 }
 
 function getActiveTheme() {
@@ -356,6 +405,23 @@ window.addEventListener('DOMContentLoaded', event => {
         } else {
             header.classList.remove('scrolled');
         }
+    });
+
+    document.addEventListener('click', event => {
+        if (!event.target.closest('.hover-gallery, .lightbox-overlay')) closeHoverGalleries();
+    });
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && !document.querySelector('.lightbox-overlay[open]')) {
+            const gallery = document.activeElement.closest('.hover-gallery');
+            gallery?.querySelector('.hover-gallery-trigger').focus();
+            closeHoverGalleries();
+        }
+    });
+    window.addEventListener('resize', closeHoverGalleries);
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('.hover-gallery').forEach(gallery => {
+            gallery.dispatchEvent(new Event('galleryreposition'));
+        });
     });
 
     initMascotDock();

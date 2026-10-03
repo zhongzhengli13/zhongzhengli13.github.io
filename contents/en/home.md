@@ -23,7 +23,7 @@
     </ul>
     <div class="focus-block">
       <div class="section-kicker">Current Focus</div>
-      <p>Perception-aware humanoid locomotion and sim-to-real transfer in complex environments.</p>
+      <p>Currently exploring humanoid locomotion over discrete stepping piles and the workflow from policy training to real-robot deployment.</p>
     </div>
   </aside>
 </div>

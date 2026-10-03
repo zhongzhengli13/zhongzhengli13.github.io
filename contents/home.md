@@ -22,7 +22,7 @@
     </ul>
     <div class="focus-block">
       <div class="section-kicker">Current Focus</div>
-      <p>面向复杂环境的人形机器人感知驱动运动控制与仿真到现实迁移。</p>
+      <p>近期围绕梅花桩等离散落脚地形，探索人形机器人策略训练与真机部署流程。</p>
     </div>
   </aside>
 </div>

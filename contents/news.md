@@ -21,7 +21,7 @@
       <h3>本科毕业</h3>
       <p>
         毕业于内蒙古农业大学计算机科学与技术专业。
-        <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg","static/assets/img/graduation_3.jpg"]'><span class="hover-gallery-trigger">查看毕业照片</span></span>
+        <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg","static/assets/img/graduation_3.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">查看毕业照片</button></span>
       </p>
     </div>
   </article>

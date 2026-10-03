@@ -21,7 +21,7 @@
       <h3>B.Eng. Graduation</h3>
       <p>
         Received my B.Eng. degree in Computer Science and Technology from Inner Mongolia Agricultural University.
-        <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg","static/assets/img/graduation_3.jpg"]'><span class="hover-gallery-trigger">View graduation photos</span></span>
+        <span class="hover-gallery" data-images='["static/assets/img/graduation_1.jpg","static/assets/img/graduation_2.jpg","static/assets/img/graduation_3.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">View graduation photos</button></span>
       </p>
     </div>
   </article>
