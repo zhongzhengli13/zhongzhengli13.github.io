@@ -892,8 +892,8 @@ section + section::before {
     right: 22px;
     bottom: 22px;
     z-index: 10010;
-    width: 128px;
-    height: 140px;
+    width: 88px;
+    height: 96px;
 }
 
 .mascot-toggle {
@@ -1035,7 +1035,7 @@ section + section::before {
 .music-player {
     position: fixed;
     right: 22px;
-    bottom: 174px;
+    bottom: 130px;
     z-index: 10009;
     width: min(330px, calc(100vw - 2rem));
     padding: 1rem;
@@ -1152,8 +1152,8 @@ a {
     .mascot-dock {
         right: 12px;
         bottom: 12px;
-        width: 104px;
-        height: 112px;
+        width: 72px;
+        height: 78px;
     }
 
     .mascot-toggle {
@@ -1180,7 +1180,7 @@ a {
 
     .music-player {
         right: 12px;
-        bottom: 136px;
+        bottom: 102px;
     }
 }
 
