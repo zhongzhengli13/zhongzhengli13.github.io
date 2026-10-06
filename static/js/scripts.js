@@ -280,7 +280,22 @@ function initMascotDock() {
     const fallback = dock.querySelector('.mascot-fallback');
 
     if (mascotImage && fallback) {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let waving = false;
+        let failed = false;
+        const updatePet = () => {
+            if (failed) return;
+            const source = reducedMotion.matches ? mascotImage.dataset.petStill
+                : waving ? mascotImage.dataset.petWave : mascotImage.dataset.petIdle;
+            if (mascotImage.getAttribute('src') !== source) mascotImage.src = source;
+        };
+        toggle.addEventListener('mouseenter', () => { waving = true; updatePet(); });
+        toggle.addEventListener('mouseleave', () => { waving = false; updatePet(); });
+        toggle.addEventListener('focus', () => { waving = true; updatePet(); });
+        toggle.addEventListener('blur', () => { waving = false; updatePet(); });
+        reducedMotion.addEventListener('change', updatePet);
         const showFallback = () => {
+            failed = true;
             mascotImage.hidden = true;
             fallback.hidden = false;
         };
@@ -288,6 +303,7 @@ function initMascotDock() {
             showFallback();
         });
         if (mascotImage.complete && mascotImage.naturalWidth === 0) showFallback();
+        updatePet();
     }
 
     toggle.addEventListener('click', (event) => {

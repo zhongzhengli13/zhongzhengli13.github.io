@@ -892,36 +892,35 @@ section + section::before {
     right: 22px;
     bottom: 22px;
     z-index: 10010;
-    width: 72px;
-    height: 72px;
+    width: 128px;
+    height: 140px;
 }
 
 .mascot-toggle {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 66px;
-    height: 66px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.72);
-    border-radius: 50%;
-    background: var(--panel-bg);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 14px;
+    background: transparent;
     cursor: pointer;
-    backdrop-filter: blur(10px);
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    transition: transform 0.22s ease;
 }
 
 .mascot-toggle:hover {
-    animation: mascot-wiggle 0.48s ease;
-    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+    transform: translateY(-3px);
 }
 
 .mascot-toggle img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 6px rgba(0, 0, 0, 0.22));
+    pointer-events: none;
 }
 
 .mascot-fallback {
@@ -937,8 +936,8 @@ section + section::before {
 
 .mascot-actions {
     position: absolute;
-    right: 13px;
-    bottom: 13px;
+    right: calc(100% + 8px);
+    bottom: 8px;
     width: 40px;
     height: 40px;
     pointer-events: none;
@@ -986,26 +985,29 @@ section + section::before {
 }
 
 .mascot-dock.is-open .mascot-action:nth-child(1) {
-    transform: translate3d(-60px, -14px, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
 }
 
 .mascot-dock.is-open .mascot-action:nth-child(2) {
-    transform: translate3d(-66px, -65px, 0) scale(1);
+    transform: translate3d(0, -50px, 0) scale(1);
 }
 
 .mascot-dock.is-open .mascot-action:nth-child(3) {
-    transform: translate3d(-18px, -62px, 0) scale(1);
+    transform: translate3d(0, -100px, 0) scale(1);
 }
 
 .mascot-dock.is-open .mascot-toggle {
-    transform: rotate(4deg);
+    transform: translateY(-3px);
 }
 
-@keyframes mascot-wiggle {
-    0%, 100% { transform: translateY(-2px) rotate(0); }
-    25% { transform: translateY(-2px) rotate(-4deg); }
-    50% { transform: translateY(-2px) rotate(3deg); }
-    75% { transform: translateY(-2px) rotate(-2deg); }
+.mascot-toggle:focus-visible {
+    outline: 3px solid var(--h-title-color);
+    outline-offset: 3px;
+}
+
+.mascot-toggle img[hidden],
+.mascot-fallback[hidden] {
+    display: none;
 }
 
 @keyframes fadeSlideUp {
@@ -1033,7 +1035,7 @@ section + section::before {
 .music-player {
     position: fixed;
     right: 22px;
-    bottom: 104px;
+    bottom: 174px;
     z-index: 10009;
     width: min(330px, calc(100vw - 2rem));
     padding: 1rem;
@@ -1150,13 +1152,13 @@ a {
     .mascot-dock {
         right: 12px;
         bottom: 12px;
-        width: 60px;
-        height: 60px;
+        width: 104px;
+        height: 112px;
     }
 
     .mascot-toggle {
-        width: 56px;
-        height: 56px;
+        width: 100%;
+        height: 100%;
     }
 
     .mascot-action {
@@ -1165,20 +1167,20 @@ a {
     }
 
     .mascot-dock.is-open .mascot-action:nth-child(1) {
-        transform: translate3d(-52px, -10px, 0) scale(1);
+        transform: translate3d(0, 0, 0) scale(1);
     }
 
     .mascot-dock.is-open .mascot-action:nth-child(2) {
-        transform: translate3d(-56px, -56px, 0) scale(1);
+        transform: translate3d(0, -46px, 0) scale(1);
     }
 
     .mascot-dock.is-open .mascot-action:nth-child(3) {
-        transform: translate3d(-14px, -54px, 0) scale(1);
+        transform: translate3d(0, -92px, 0) scale(1);
     }
 
     .music-player {
         right: 12px;
-        bottom: 84px;
+        bottom: 136px;
     }
 }
 
