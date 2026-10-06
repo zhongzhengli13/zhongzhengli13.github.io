@@ -281,29 +281,69 @@ function initMascotDock() {
 
     if (mascotImage && fallback) {
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        let waving = false;
+        const idleSource = mascotImage.dataset.petIdle;
+        const actions = ['waving', 'waiting', 'running', 'running-right', 'running-left', 'jumping', 'review', 'failed'];
+        let hovered = false;
+        let focused = false;
         let failed = false;
+        let currentAction = 'idle';
+        let previousAction = null;
+        let nextActionTimer = null;
+        let finishActionTimer = null;
+
         const updatePet = () => {
             if (failed) return;
             const source = reducedMotion.matches ? mascotImage.dataset.petStill
-                : waving ? mascotImage.dataset.petWave : mascotImage.dataset.petIdle;
+                : idleSource.replace(/idle\.webp$/, currentAction + '.webp');
             if (mascotImage.getAttribute('src') !== source) mascotImage.src = source;
         };
-        toggle.addEventListener('mouseenter', () => { waving = true; updatePet(); });
-        toggle.addEventListener('mouseleave', () => { waving = false; updatePet(); });
-        toggle.addEventListener('focus', () => { waving = true; updatePet(); });
-        toggle.addEventListener('blur', () => { waving = false; updatePet(); });
-        reducedMotion.addEventListener('change', updatePet);
+        const clearTimers = () => {
+            clearTimeout(nextActionTimer);
+            clearTimeout(finishActionTimer);
+        };
+        const scheduleAction = () => {
+            clearTimeout(nextActionTimer);
+            if (failed || reducedMotion.matches || document.hidden || hovered || focused) return;
+            nextActionTimer = setTimeout(() => {
+                if (dock.classList.contains('is-open')) {
+                    scheduleAction();
+                    return;
+                }
+                const choices = actions.filter(action => action !== previousAction);
+                currentAction = choices[Math.floor(Math.random() * choices.length)];
+                previousAction = currentAction;
+                updatePet();
+                finishActionTimer = setTimeout(() => {
+                    currentAction = 'idle';
+                    updatePet();
+                    scheduleAction();
+                }, 2500 + Math.random() * 1500);
+            }, 8000 + Math.random() * 8000);
+        };
+        const resetPet = () => {
+            clearTimers();
+            currentAction = hovered || focused ? 'waving' : 'idle';
+            updatePet();
+            scheduleAction();
+        };
+        dock.addEventListener('mouseenter', () => { hovered = true; resetPet(); });
+        dock.addEventListener('mouseleave', () => { hovered = false; resetPet(); });
+        dock.addEventListener('focusin', () => { focused = true; resetPet(); });
+        dock.addEventListener('focusout', event => {
+            focused = dock.contains(event.relatedTarget);
+            resetPet();
+        });
+        reducedMotion.addEventListener('change', resetPet);
+        document.addEventListener('visibilitychange', resetPet);
         const showFallback = () => {
             failed = true;
+            clearTimers();
             mascotImage.hidden = true;
             fallback.hidden = false;
         };
-        mascotImage.addEventListener('error', () => {
-            showFallback();
-        });
+        mascotImage.addEventListener('error', showFallback);
         if (mascotImage.complete && mascotImage.naturalWidth === 0) showFallback();
-        updatePet();
+        resetPet();
     }
 
     toggle.addEventListener('click', (event) => {
