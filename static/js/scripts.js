@@ -52,6 +52,44 @@ function applyI18n() {
     });
     document.getElementById('lang-toggle').textContent = currentLang === 'zh' ? 'EN' : '中';
     document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+    updateLikeButton();
+}
+
+function updateLikeButton() {
+    const button = document.getElementById('site-like-button');
+    if (!button) return;
+    const liked = button.getAttribute('aria-pressed') === 'true';
+    const english = currentLang === 'en';
+    button.classList.toggle('is-liked', liked);
+    button.querySelector('[data-like-label]').textContent = liked
+        ? (english ? 'Thanks for the love' : '谢谢你的喜欢')
+        : (english ? 'Leave a heart' : '送一颗爱心');
+    button.setAttribute('aria-label', liked
+        ? (english ? 'Undo like' : '取消点赞')
+        : (english ? 'Like this website' : '喜欢这个网站'));
+}
+
+function initLikeButton() {
+    const button = document.getElementById('site-like-button');
+    if (!button) return;
+    const storageKey = 'zhongzhengli-site-liked';
+    try {
+        button.setAttribute('aria-pressed', String(localStorage.getItem(storageKey) === 'true'));
+    } catch {}
+    updateLikeButton();
+    button.addEventListener('click', () => {
+        const liked = button.getAttribute('aria-pressed') !== 'true';
+        button.setAttribute('aria-pressed', String(liked));
+        try {
+            localStorage.setItem(storageKey, String(liked));
+        } catch {}
+        updateLikeButton();
+    });
+    window.addEventListener('storage', event => {
+        if (event.key !== storageKey && event.key !== null) return;
+        button.setAttribute('aria-pressed', String(event.key !== null && event.newValue === 'true'));
+        updateLikeButton();
+    });
 }
 
 // Add only music you own or are licensed to redistribute. Example:
@@ -489,5 +527,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
     initMascotDock();
     initMusicPlayer();
+    initLikeButton();
     loadContent();
 });
