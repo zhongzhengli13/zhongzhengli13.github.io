@@ -1184,55 +1184,7 @@ a {
     }
 }
 
-.site-like {
-    display: flex;
-    justify-content: center;
-    padding: 2rem 1rem;
-}
-
-.like-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    min-height: 48px;
-    padding: 0.7rem 1.2rem;
-    border: 1px solid var(--border-color);
-    border-radius: 999px;
-    background: var(--panel-bg);
-    color: var(--text-primary);
-    font: inherit;
-    cursor: pointer;
-}
-
-.like-button:hover,
-.like-button.is-liked {
-    border-color: #d94b70;
-}
-
-.like-button:focus-visible {
-    outline: 3px solid var(--h-title-color);
-    outline-offset: 4px;
-}
-
-.like-icon {
-    flex: 0 0 auto;
-    fill: none;
-    stroke: #d94b70;
-    stroke-width: 1.7;
-    stroke-linejoin: round;
-}
-
-.like-button.is-liked .like-icon {
-    fill: #d94b70;
-    animation: heart-pop 0.35s ease;
-}
-
-@keyframes heart-pop {
-    50% { transform: scale(1.25); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-    .like-button.is-liked .like-icon { animation: none; }
     #home, #projects, #news, #publications, #awards {
         opacity: 1;
         animation: none;
