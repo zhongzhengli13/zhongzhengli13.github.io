@@ -23,7 +23,7 @@
     <script>
         try {
             const theme = localStorage.getItem('theme');
-            if (theme) document.documentElement.dataset.theme = theme;
+            if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
         } catch {}
     </script>
 
@@ -86,18 +86,39 @@
 
     <!-- Mathematics (loaded on demand when math content is detected) -->
     <script>
-        window.loadMathJax = function() {
-            MathJax = {
-                tex: {
-                    inlineMath: [['$', '$'], ['\\(', '\\)']],
-                    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        (() => {
+            let loading;
+            let typesetting = Promise.resolve();
+            window.loadMathJax = function(root = document.body) {
+                if (!loading) {
+                    window.MathJax = {
+                        tex: {
+                            inlineMath: [['$', '$'], ['\\(', '\\)']],
+                            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                        },
+                        startup: { typeset: false }
+                    };
+                    loading = new Promise((resolve, reject) => {
+                        const script = document.createElement('script');
+                        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js';
+                        script.async = true;
+                        script.onload = () => MathJax.startup.promise.then(resolve, reject);
+                        script.onerror = () => {
+                            script.remove();
+                            loading = null;
+                            reject(new Error('Unable to load math support'));
+                        };
+                        document.head.appendChild(script);
+                    });
                 }
+                return loading.then(() => {
+                    typesetting = typesetting.then(() => {
+                        if (root.isConnected) return MathJax.typesetPromise([root]);
+                    }).catch(error => console.error(error));
+                    return typesetting;
+                }).catch(error => console.error(error));
             };
-            const s = document.createElement('script');
-            s.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
-            s.async = true;
-            document.head.appendChild(s);
-        };
+        })();
     </script>
 
     <!-- Core JS-->

@@ -17,7 +17,9 @@ const i18n = {
         'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;奖项',
         'music-kicker': 'LISTENING CORNER',
         'music-title': '一小段音乐时间',
-        'music-empty': '在 scripts.js 的 musicTracks 中添加自己的音频链接后，即可开始播放。'
+        'music-empty': '在 scripts.js 的 musicTracks 中添加自己的音频链接后，即可开始播放。',
+        'content-error': '这部分内容暂时未能加载。',
+        'content-retry': '重新加载'
     },
     en: {
         'nav-home': 'HOME',
@@ -32,11 +34,23 @@ const i18n = {
         'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;AWARDS',
         'music-kicker': 'LISTENING CORNER',
         'music-title': 'A small playlist',
-        'music-empty': 'Add your own audio links to musicTracks in scripts.js to start listening.'
+        'music-empty': 'Add your own audio links to musicTracks in scripts.js to start listening.',
+        'content-error': 'This content could not be loaded.',
+        'content-retry': 'Try again'
     }
 }
 
-let currentLang = localStorage.getItem('lang') || 'zh';
+function readStorage(key) {
+    try { return localStorage.getItem(key); } catch { return null; }
+}
+
+function saveStorage(key, value) {
+    try { localStorage.setItem(key, value); } catch {}
+}
+
+let currentLang = readStorage('lang') === 'en' ? 'en' : 'zh';
+let contentController = null;
+let contentGeneration = 0;
 
 function getDir() {
     return currentLang === 'en' ? content_dir + 'en/' : content_dir;
@@ -107,7 +121,7 @@ function initMusicPlayer() {
 }
 
 function showCvToast() {
-    const lang = localStorage.getItem('lang') || 'zh';
+    const lang = currentLang;
     const title = lang === 'en' ? 'CV is being updated' : 'CV 正在更新中';
     const msg = lang === 'en'
         ? 'A refreshed version will be available after the content is finalized.'
@@ -270,7 +284,7 @@ function updateThemeButton() {
 
 function setTheme(theme) {
     document.documentElement.dataset.theme = theme;
-    localStorage.setItem('theme', theme);
+    saveStorage('theme', theme);
     updateThemeButton();
 }
 
@@ -383,44 +397,70 @@ function initMascotDock() {
 }
 
 function loadContent() {
-    // Yaml
-    fetch(getDir() + config_file)
-        .then(response => response.text())
+    contentController?.abort();
+    contentController = new AbortController();
+    const signal = contentController.signal;
+    const generation = ++contentGeneration;
+    const directory = getDir();
+    const strings = i18n[currentLang];
+    const isCurrent = () => generation === contentGeneration;
+    const fetchText = async filename => {
+        const response = await fetch(directory + filename, { signal });
+        if (!response.ok) throw new Error(`Unable to load ${filename}: HTTP ${response.status}`);
+        return response.text();
+    };
+    closeHoverGalleries();
+    applyI18n();
+
+    fetchText(config_file)
         .then(text => {
+            if (!isCurrent()) return;
             const yml = jsyaml.load(text);
             Object.keys(yml).forEach(key => {
-                try {
-                    let val = yml[key];
-                    if (val === 'COPYRIGHT_PLACEHOLDER') {
-                        const year = new Date().getFullYear();
-                        val = `&copy; Zhongzheng Li 2022-${year}. All Rights Reserved.`;
-                    }
-                    document.getElementById(key).innerHTML = val;
-                } catch {
-                    console.log("Unknown id and value: " + key + "," + yml[key].toString())
+                const target = document.getElementById(key);
+                if (!target) return;
+                let val = yml[key];
+                if (val === 'COPYRIGHT_PLACEHOLDER') {
+                    const year = new Date().getFullYear();
+                    val = `&copy; Zhongzheng Li 2022-${year}. All Rights Reserved.`;
                 }
+                target.innerHTML = val ?? '';
             })
         })
-        .catch(error => console.log(error));
+        .catch(error => { if (isCurrent() && error.name !== 'AbortError') console.error(error); });
 
-    // Marked
     marked.use({ mangle: false, headerIds: false })
-    section_names.forEach((name, idx) => {
-        fetch(getDir() + name + '.md')
-            .then(response => response.text())
+    section_names.forEach(name => {
+        const target = document.getElementById(name + '-md');
+        target.setAttribute('aria-busy', 'true');
+        fetchText(name + '.md')
             .then(markdown => {
+                if (!isCurrent()) return;
                 const html = marked.parse(markdown);
-                document.getElementById(name + '-md').innerHTML = html;
+                window.MathJax?.typesetClear?.([target]);
+                target.innerHTML = html;
+                target.setAttribute('aria-busy', 'false');
                 // Load MathJax only if math content is detected
-                if (/[$$]/.test(markdown) && typeof loadMathJax === 'function') {
-                    loadMathJax();
+                if (/\$|\\\(|\\\[/.test(markdown) && typeof loadMathJax === 'function') {
+                    loadMathJax(target);
                 }
                 initHoverGalleries();
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                if (!isCurrent() || error.name === 'AbortError') return;
+                console.error(error);
+                window.MathJax?.typesetClear?.([target]);
+                const message = document.createElement('p');
+                message.textContent = strings['content-error'];
+                const retry = document.createElement('button');
+                retry.type = 'button';
+                retry.className = 'btn btn-outline-primary';
+                retry.textContent = strings['content-retry'];
+                retry.addEventListener('click', loadContent);
+                target.replaceChildren(message, retry);
+                target.setAttribute('aria-busy', 'false');
+            });
     })
-
-    applyI18n();
 }
 
 
@@ -451,7 +491,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Language toggle
     document.getElementById('lang-toggle').addEventListener('click', () => {
         currentLang = currentLang === 'zh' ? 'en' : 'zh';
-        localStorage.setItem('lang', currentLang);
+        saveStorage('lang', currentLang);
         loadContent();
     });
 

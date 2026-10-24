@@ -16,7 +16,10 @@ title: 随笔
     {% for category in categories %}<button type="button" data-category="{{ category | escape }}" aria-pressed="false">{{ category | escape }}</button>{% endfor %}
   </div>
 </div>
-<p class="journal-results" id="journal-results" aria-live="polite" aria-atomic="true">{{ entries.size }} 篇记录</p>
+<div class="journal-results-bar">
+  <p class="journal-results" id="journal-results" aria-live="polite" aria-atomic="true">{{ entries.size }} 篇记录</p>
+  <button type="button" id="journal-reset" data-j18n="reset" hidden>清除筛选</button>
+</div>
 <div class="journal-entries">
   {% for entry in entries %}
   <article class="journal-card" data-journal-entry data-category="{{ entry.category | escape }}" data-search="{{ entry.title | append: ' ' | append: entry.summary | append: ' ' | append: entry.content | strip_html | normalize_whitespace | escape }}">
@@ -30,5 +33,5 @@ title: 随笔
   </article>
   {% endfor %}
 </div>
-<div class="journal-empty" id="journal-empty" {% unless entries.size == 0 %}hidden{% endunless %}><p data-j18n="empty">这里还没有匹配的随笔。</p><button type="button" id="journal-reset" data-j18n="reset" hidden>清除筛选</button></div>
+<div class="journal-empty" id="journal-empty" {% unless entries.size == 0 %}hidden{% endunless %}><p data-j18n="empty">这里还没有匹配的随笔。</p></div>
 <noscript><p class="journal-noscript">可以直接打开文章阅读。启用 JavaScript 后可使用搜索和分类筛选。</p></noscript>
