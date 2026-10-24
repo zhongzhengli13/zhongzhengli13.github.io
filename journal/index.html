@@ -1,0 +1,34 @@
+---
+layout: journal-shell
+title: 随笔
+---
+{% assign entries = site.journal | where_exp: 'entry', 'entry.published != false' | sort: 'date' | reverse %}
+<header class="journal-heading">
+  <p class="journal-eyebrow">NOTES ALONG THE WAY</p>
+  <h1 data-j18n="journal">随笔</h1>
+  <p class="journal-intro" data-j18n="intro">日记、想法，以及值得留住的片刻。</p>
+</header>
+<div class="journal-tools" hidden id="journal-tools">
+  <label class="journal-search"><span aria-hidden="true">⌕</span><span class="sr-only" data-j18n="searchLabel">搜索随笔</span><input type="search" id="journal-search" placeholder="搜索标题或正文…" autocomplete="off" data-j18n-placeholder="searchPlaceholder"><kbd>/</kbd></label>
+  <div class="journal-filters" role="group" aria-label="按分类筛选" data-j18n-aria="filterLabel">
+    <button type="button" data-category="" aria-pressed="true" data-j18n="all">全部</button>
+    {% assign categories = entries | map: 'category' | uniq | sort %}
+    {% for category in categories %}<button type="button" data-category="{{ category | escape }}" aria-pressed="false">{{ category | escape }}</button>{% endfor %}
+  </div>
+</div>
+<p class="journal-results" id="journal-results" aria-live="polite" aria-atomic="true">{{ entries.size }} 篇记录</p>
+<div class="journal-entries">
+  {% for entry in entries %}
+  <article class="journal-card" data-journal-entry data-category="{{ entry.category | escape }}" data-search="{{ entry.title | append: ' ' | append: entry.summary | append: ' ' | append: entry.content | strip_html | normalize_whitespace | escape }}">
+    <div class="journal-card-copy">
+      <div class="journal-meta"><time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: '%Y.%m.%d' }}</time><span aria-hidden="true">/</span><span>{{ entry.category | escape }}</span></div>
+      <h2><a href="{{ entry.url | relative_url }}">{{ entry.title | escape }}</a></h2>
+      <p>{{ entry.summary | escape }}</p>
+      <a class="journal-card-read" href="{{ entry.url | relative_url }}" data-j18n="read">读这篇随笔 →</a>
+    </div>
+    {% if entry.cover %}<a class="journal-card-cover" href="{{ entry.url | relative_url }}" aria-label="{{ entry.title | escape }}" tabindex="-1"><img src="{{ entry.cover | relative_url }}" alt="{{ entry.cover_alt | default: entry.title | escape }}" width="640" height="480" loading="lazy"></a>{% endif %}
+  </article>
+  {% endfor %}
+</div>
+<div class="journal-empty" id="journal-empty" {% unless entries.size == 0 %}hidden{% endunless %}><p data-j18n="empty">这里还没有匹配的随笔。</p><button type="button" id="journal-reset" data-j18n="reset" hidden>清除筛选</button></div>
+<noscript><p class="journal-noscript">可以直接打开文章阅读。启用 JavaScript 后可使用搜索和分类筛选。</p></noscript>

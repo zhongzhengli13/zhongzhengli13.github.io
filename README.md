@@ -2,6 +2,10 @@
 
 # A simple Github Pages template for academic personal website.
 
+## 随笔
+
+随笔页面位于 `/journal/`，每篇文章保存在 `_journal/` 中，使用 Jekyll 自动生成列表和阅读页。在线编辑入口为 `/admin/`，支持 Decap 体验模式和本地编辑；正式 GitHub 登录需另行配置认证。详见 [随笔写作说明](docs/journal-writing.md)。
+
 ## Preview
 
 I replaced this with mine.🙃

@@ -1,0 +1,25 @@
+url: https://zhongzhengli13.github.io
+baseurl: ""
+timezone: Asia/Shanghai
+markdown: kramdown
+kramdown:
+  input: GFM
+collections:
+  journal:
+    output: true
+    permalink: /journal/:name/
+defaults:
+  - scope:
+      path: ""
+      type: journal
+    values:
+      layout: journal-post
+      category: 随笔
+      published: true
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - docs
+  - templates
+  - README.md
+  - scripts

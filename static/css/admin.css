@@ -1,0 +1,18 @@
+body { margin: 0; background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; line-height: 1.8; }
+[hidden] { display: none !important; }
+.cms-setup { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
+.cms-back { color: var(--text-secondary); font-size: 13px; text-decoration: none; }
+.cms-kicker { margin: 72px 0 12px; color: var(--accent-green); font-size: 11px; letter-spacing: 0.2em; }
+.cms-setup h1 { font-size: clamp(26px, 5vw, 36px); font-weight: 600; line-height: 1.5; }
+.cms-setup > p:not(.cms-kicker) { color: var(--text-secondary); font-size: 14px; }
+.cms-status { border-left: 3px solid var(--accent-green); background: var(--panel-bg); padding: 14px 18px; margin: 28px 0; }
+.cms-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; font-size: 13px; }
+.cms-actions a { color: var(--link-color); }
+.cms-actions .cms-primary { background: var(--h-title-color); color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 6px; }
+.cms-setup details { border-top: 1px solid var(--border-color); margin-top: 36px; padding-top: 20px; color: var(--text-secondary); font-size: 13px; }
+.cms-setup summary { cursor: pointer; }
+.cms-demo-notice { background: #fff4cd; color: #5d440a; padding: 10px 16px; font-size: 12px; text-align: center; position: sticky; top: 0; z-index: 100000; }
+.cms-demo-notice a { color: inherit; margin-left: 12px; }
+.cms-is-demo #nc-root { isolation: isolate; position: relative; z-index: 0; }
+.cms-is-demo #nc-root > div { padding-top: 50px; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--h-title-color); outline-offset: 4px; }

@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -6,4 +9,7 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>{{ '/journal/' | absolute_url }}</loc></url>
+  {% assign entries = site.journal | where_exp: 'entry', 'entry.published != false' %}
+  {% for entry in entries %}<url><loc>{{ entry.url | absolute_url }}</loc><lastmod>{{ entry.date | date_to_xmlschema }}</lastmod></url>{% endfor %}
 </urlset>

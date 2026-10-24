@@ -1,0 +1,44 @@
+# Set backend.base_url to your deployed GitHub OAuth proxy URL to enable real login.
+# Keep OAuth client secrets on that server; never put secrets in this file.
+backend:
+  name: github
+  repo: zhongzhengli13/zhongzhengli13.github.io
+  branch: main
+  base_url: ""
+  auth_endpoint: auth
+publish_mode: editorial_workflow
+locale: zh_Hans
+site_url: https://zhongzhengli13.github.io
+display_url: https://zhongzhengli13.github.io/journal/
+media_folder: static/assets/img/journal
+public_folder: /static/assets/img/journal
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+collections:
+  - name: journal
+    label: 随笔
+    label_singular: 随笔
+    folder: _journal
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{fields.slug}}"
+    summary: "{{title}} · {{date}}"
+    preview_path: "journal/{{slug}}/"
+    sortable_fields: [date, title]
+    fields:
+      - {label: 标题, name: title, widget: string}
+      - label: 链接名称
+        name: slug
+        widget: string
+        hint: 使用英文小写和短横线，例如 an-ordinary-day。发布后保持不变。
+        pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', '请使用英文小写、数字和短横线']
+      - {label: 日期, name: date, widget: datetime, format: "YYYY-MM-DD HH:mm:ss ZZ", date_format: "YYYY-MM-DD", time_format: "HH:mm", picker_utc: false}
+      - {label: 分类, name: category, widget: string, default: 生活}
+      - {label: 摘要, name: summary, widget: text, hint: 一两句话即可，将显示在随笔列表中。}
+      - {label: 封面图片, name: cover, widget: image, required: false}
+      - {label: 图片说明, name: cover_alt, widget: string, required: false}
+      - {label: 标签, name: tags, widget: list, required: false}
+      - {label: 正文, name: body, widget: markdown}

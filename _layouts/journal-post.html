@@ -1,0 +1,18 @@
+---
+layout: journal-shell
+---
+<a class="journal-back" href="{{ '/journal/' | relative_url }}" data-j18n="backJournal">← 全部随笔</a>
+<div class="journal-reading-layout">
+  <article class="journal-post">
+    <header class="journal-post-heading">
+      <div class="journal-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%Y.%m.%d' }}</time><span aria-hidden="true">/</span><span>{{ page.category | escape }}</span></div>
+      <h1>{{ page.title | escape }}</h1>
+      {% if page.summary %}<p class="journal-post-summary">{{ page.summary | escape }}</p>{% endif %}
+    </header>
+    <div class="journal-prose" id="journal-prose">{{ content }}</div>
+    {% if page.tags.size > 0 %}<div class="journal-post-tags">{% for tag in page.tags %}<span># {{ tag | escape }}</span>{% endfor %}</div>{% endif %}
+    <div class="journal-post-end"><span aria-hidden="true">—</span><span data-j18n="postEnd">记于此，待续。</span></div>
+    <a class="journal-back" href="{{ '/journal/' | relative_url }}" data-j18n="backJournal">← 全部随笔</a>
+  </article>
+  <aside class="journal-toc" id="journal-toc" hidden><strong data-j18n="toc">本篇目录</strong><nav aria-label="本篇目录" data-j18n-aria="toc"></nav></aside>
+</div>

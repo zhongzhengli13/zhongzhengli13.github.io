@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }} · Zhongzheng Li</title>
+  <meta name="description" content="{{ page.description | default: page.summary | default: '研究之外，记下生活。李中政的日记、随笔与学习记录。' | escape }}">
+  <meta property="og:title" content="{{ page.title | escape }} · Zhongzheng Li">
+  <meta property="og:description" content="{{ page.summary | default: '研究之外，记下生活。' | escape }}">
+  <meta property="og:type" content="{% if page.collection == 'journal' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  {% if page.cover %}<meta property="og:image" content="{{ page.cover | absolute_url }}">{% endif %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/static/assets/favicon.ico' | relative_url }}">
+  <script>
+    try {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+    } catch {}
+  </script>
+  <link rel="stylesheet" href="{{ '/static/css/main.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/static/css/journal.css' | relative_url }}">
+  <script defer src="{{ '/static/js/journal.js' | relative_url }}"></script>
+</head>
+<body class="journal-page">
+  <a class="journal-skip" href="#journal-main" data-j18n="skip">跳到正文</a>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+  <div class="journal-frame">
+    <aside class="journal-sidebar" aria-label="随笔导航" data-j18n-aria="navigation">
+      <a class="journal-identity" href="{{ '/' | relative_url }}" aria-label="Zhongzheng Li · 首页">
+        <span class="journal-monogram" aria-hidden="true">Li<span>.</span></span>
+        <strong>Zhongzheng Li</strong>
+        <span class="journal-chinese-name">李中政</span>
+      </a>
+      <p class="journal-sidebar-note" data-j18n="asideNote">研究之外，<br>记下生活。</p>
+      <nav class="journal-nav">
+        <a href="{{ '/' | relative_url }}"><span aria-hidden="true">↗</span><span data-j18n="home">学术主页</span></a>
+        <a href="{{ '/journal/' | relative_url }}" class="is-current" aria-current="{% if page.collection == 'journal' %}true{% else %}page{% endif %}"><span aria-hidden="true">✎</span><span data-j18n="journal">随笔</span></a>
+      </nav>
+      <div class="journal-sidebar-bottom">
+        <div class="journal-controls">
+          <button type="button" id="journal-theme" aria-label="切换深浅色">◐</button>
+          <button type="button" id="journal-lang" aria-label="Switch interface to English">EN</button>
+        </div>
+        <p>© {{ site.time | date: '%Y' }} Zhongzheng Li</p>
+        <a class="journal-write-link" href="{{ '/admin/' | relative_url }}" data-j18n="write">写随笔 ↗</a>
+      </div>
+    </aside>
+    <main id="journal-main" class="journal-main" tabindex="-1">
+      {{ content }}
+      <footer class="journal-footer"><span data-j18n="footer">日常有迹，来日可寻。</span><div><a href="{{ '/admin/' | relative_url }}" data-j18n="write">写随笔 ↗</a><span aria-hidden="true"> · </span><a href="{{ '/' | relative_url }}" data-j18n="backHome">返回主页 ↗</a></div></footer>
+    </main>
+  </div>
+  <dialog class="journal-lightbox" id="journal-lightbox" aria-label="照片查看器" data-j18n-aria="photoViewer">
+    <button type="button" aria-label="关闭照片" data-j18n-aria="closePhoto">×</button>
+    <img alt="">
+  </dialog>
+</body>
+</html>
