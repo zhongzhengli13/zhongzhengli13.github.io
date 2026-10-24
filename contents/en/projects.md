@@ -32,8 +32,11 @@
     <div class="project-tags"><span>Humanoid Robotics</span><span>Whole-Body Skills</span><span>Sim-to-Real</span></div>
     <dl class="project-details">
       <div><dt>Approach</dt><dd>Train policies for complex-terrain tasks and explore the workflow from training to real-robot deployment and debugging.</dd></div>
-      <div><dt>Progress</dt><dd>Currently investigating stepping-pile locomotion; whole-body and parkour skills remain under exploration.</dd></div>
+      <div><dt>Progress</dt><dd>MuJoCo simulation tests for the stepping-pile task are underway. The video below shows interim simulation results; whole-body and parkour skills remain under exploration.</dd></div>
       <div><dt>My contribution</dt><dd>I am responsible for advancing policy training, real-robot deployment, and debugging while exploring complex-terrain locomotion and whole-body skills.</dd></div>
     </dl>
+    <figure class="project-demo">
+      <figcaption><strong>Stepping-Pile Task · MuJoCo Simulation Test</strong><p>An interim simulation demonstration of a perceptive bipedal robot on the stepping-pile task.</p><a href="https://www.xiaohongshu.com/discovery/item/6ad6e701000000002901b37f?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABjJLuYzMzWblSaQl3Y5L58JSZ1BrztBbP7JHcbGZUp6s=&amp;xsec_source=pc_share" target="_blank" rel="noopener noreferrer">Watch the simulation video on Xiaohongshu ↗</a></figcaption>
+    </figure>
   </article>
 </div>

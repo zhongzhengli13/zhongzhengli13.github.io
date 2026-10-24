@@ -32,8 +32,11 @@
     <div class="project-tags"><span>Humanoid Robotics</span><span>Whole-Body Skills</span><span>Sim-to-Real</span></div>
     <dl class="project-details">
       <div><dt>方法与流程</dt><dd>围绕复杂地形任务开展策略训练，探索从训练到真机部署、调试的技能学习流程。</dd></div>
-      <div><dt>当前进展</dt><dd>目前围绕梅花桩任务开展探索，全身运动与跑酷技能仍在研究中。</dd></div>
+      <div><dt>当前进展</dt><dd>已开展梅花桩任务的 MuJoCo 仿真测试，下方视频展示阶段性仿真效果；全身运动与跑酷技能仍在研究中。</dd></div>
       <div><dt>个人贡献</dt><dd>负责策略训练、真机部署与调试流程的推进，持续开展复杂地形与全身技能探索。</dd></div>
     </dl>
+    <figure class="project-demo">
+      <figcaption><strong>梅花桩任务 · MuJoCo 仿真测试</strong><p>双足感知机器人梅花桩任务的阶段性仿真演示。</p><a href="https://www.xiaohongshu.com/discovery/item/6ad6e701000000002901b37f?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABjJLuYzMzWblSaQl3Y5L58JSZ1BrztBbP7JHcbGZUp6s=&amp;xsec_source=pc_share" target="_blank" rel="noopener noreferrer">在小红书观看仿真视频 ↗</a></figcaption>
+    </figure>
   </article>
 </div>
