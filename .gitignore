@@ -3,4 +3,11 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 .bundle/
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+!.env.example
 

@@ -1,0 +1,14 @@
+{
+  "name": "zhongzhengli-decap-auth",
+  "account_id": "4fb91f0301a8b9c17b6530cc74adb701",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-24",
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": { "enabled": false },
+  "vars": {
+    "SITE_ORIGIN": "https://zhongzhengli13.github.io",
+    "GITHUB_REPO": "zhongzhengli13/zhongzhengli13.github.io",
+    "ALLOWED_USER": "zhongzhengli13"
+  }
+}

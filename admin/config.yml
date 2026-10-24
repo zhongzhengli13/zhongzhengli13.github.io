@@ -1,11 +1,12 @@
-# Set backend.base_url to your deployed GitHub OAuth proxy URL to enable real login.
+# GitHub login is handled by the deployed Cloudflare OAuth service.
 # Keep OAuth client secrets on that server; never put secrets in this file.
 backend:
   name: github
   repo: zhongzhengli13/zhongzhengli13.github.io
   branch: main
-  base_url: ""
+  base_url: https://zhongzhengli-decap-auth.zhongzhengli-decap-auth.workers.dev
   auth_endpoint: auth
+  site_domain: zhongzhengli13.github.io
 publish_mode: editorial_workflow
 locale: zh_Hans
 site_url: https://zhongzhengli13.github.io

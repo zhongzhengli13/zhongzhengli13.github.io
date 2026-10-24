@@ -42,9 +42,13 @@ BIND_HOST=127.0.0.1 npx decap-server
 
 `/admin/?demo=1` 使用 Decap 官方的 `test-repo` 后端。可以体验文章字段、Markdown 编辑、图片选择和预览，但不会读取仓库现有文章，不会保存到文件或 GitHub，刷新后内容消失。页面顶部会一直显示体验提示。
 
-正式使用需配置 GitHub OAuth 认证服务，当前尚未配置。页面会显示配置状态，不会把体验模式当作已连接的后台。
+正式 GitHub 登录已接入 Cloudflare Workers。网站发布后，打开 `https://zhongzhengli13.github.io/admin/`，点击 GitHub 登录并完成首次授权，即可在线写作。认证服务只允许 `zhongzhengli13` 账号登录。
 
-1. 按 [Decap 的 GitHub 认证说明](https://decapcms.org/docs/backends-overview/#using-github-with-an-oauth-proxy) 配置 OAuth 代理，或选用其托管认证方案。认证服务应限制为当前站点的来源，不使用不明第三方的共享代理。
+认证服务源码、测试与后续维护步骤见 [`services/decap-auth/README.md`](../services/decap-auth/README.md)。Client ID 和 Client Secret 已保存在 Cloudflare Secret 中；它们不写进网站仓库。
+
+以下步骤用于重新部署或维护认证服务，当前站点已完成接入：
+
+1. 按 [Decap 的 GitHub 认证说明](https://decapcms.org/docs/backends-overview/#using-github-with-an-oauth-proxy) 配置 OAuth 代理。认证服务应限制为当前站点的来源。
 2. 在 GitHub 创建与该认证服务配套的 OAuth App，按服务要求填写回调地址；Client Secret 仅保存在认证服务器的密钥配置中，不能放进网页、仓库或聊天。
 3. 把代理 HTTPS 地址填入 `admin/config.yml` 的 `backend.base_url`，确认路径 `auth_endpoint: auth` 与服务一致。仓库和主分支已经填好。
 4. 构建并发布网站后打开 `/admin/`，使用对该仓库有写权限的 GitHub 账号登录。先保存草稿，确认预览后发布。`editorial_workflow` 通过分支和 PR 管理草稿，发布会合并到 `main`，随后 Pages 自动构建。

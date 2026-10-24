@@ -4,7 +4,7 @@
 
 ## 随笔
 
-随笔页面位于 `/journal/`，每篇文章保存在 `_journal/` 中，使用 Jekyll 自动生成列表和阅读页。在线编辑入口为 `/admin/`，支持 Decap 体验模式和本地编辑；正式 GitHub 登录需另行配置认证。详见 [随笔写作说明](docs/journal-writing.md)。
+随笔页面位于 `/journal/`，每篇文章保存在 `_journal/` 中，使用 Jekyll 自动生成列表和阅读页。在线编辑入口为 `/admin/`，通过 Cloudflare Workers 接入 GitHub 登录，并支持 Decap 体验模式和本地编辑。详见 [随笔写作说明](docs/journal-writing.md)。
 
 ## Preview
 

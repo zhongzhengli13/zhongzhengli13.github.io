@@ -33,6 +33,10 @@
             return;
         } else if (new URL(config.backend.base_url).protocol !== 'https:') {
             throw new Error('GitHub 登录服务需要使用 HTTPS 地址。');
+        } else if (location.origin !== new URL(config.site_url).origin) {
+            status.textContent = 'GitHub 登录已配置，请在正式网站中登录；本地预览可使用“编辑本地文章”。';
+            document.getElementById('cms-live-link').hidden = false;
+            return;
         }
         status.textContent = '正在加载编辑器…';
         await new Promise((resolve, reject) => {
