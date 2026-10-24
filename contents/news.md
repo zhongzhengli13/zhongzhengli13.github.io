@@ -3,7 +3,10 @@
     <time>2026.09.20 - 09.27</time>
     <div>
       <h3>数学建模比赛</h3>
-      <p>参加数学建模比赛。</p>
+      <p>
+        参加数学建模比赛。答案已提交，故事留在这里。
+        <span class="hover-gallery" data-gallery-label="数学建模赛后照片" data-images='["static/assets/img/modeling_competition.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">查看赛后照片</button></span>
+      </p>
     </div>
   </article>
 

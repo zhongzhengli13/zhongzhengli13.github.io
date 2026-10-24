@@ -3,7 +3,10 @@
     <time>2026.09.20 - 09.27</time>
     <div>
       <h3>Mathematical Modeling Competition</h3>
-      <p>Participated in a mathematical modeling competition.</p>
+      <p>
+        Participated in a mathematical modeling competition. The answers are submitted; the stories stay here.
+        <span class="hover-gallery" data-gallery-label="Mathematical modeling competition photos" data-images='["static/assets/img/modeling_competition.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">View the post-competition photo</button></span>
+      </p>
     </div>
   </article>
 

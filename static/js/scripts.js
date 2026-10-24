@@ -138,6 +138,7 @@ function initHoverGalleries() {
 
         const trigger = gallery.querySelector('.hover-gallery-trigger');
         const images = JSON.parse(gallery.getAttribute('data-images'));
+        const galleryLabel = gallery.dataset.galleryLabel || (currentLang === 'en' ? 'Graduation photos' : '毕业照片');
         let popup = null;
         let hideTimeout = null;
         let pinned = false;
@@ -152,15 +153,15 @@ function initHoverGalleries() {
         function createPopup() {
             popup = document.createElement('span');
             popup.className = 'hover-gallery-popup';
-            popup.id = 'graduation-gallery-' + document.querySelectorAll('.hover-gallery-popup').length;
+            popup.id = 'photo-gallery-' + document.querySelectorAll('.hover-gallery-popup').length;
             popup.setAttribute('role', 'group');
-            popup.setAttribute('aria-label', currentLang === 'en' ? 'Graduation photos' : '毕业照片');
+            popup.setAttribute('aria-label', galleryLabel);
             trigger.setAttribute('aria-controls', popup.id);
             images.forEach((src, index) => {
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.className = 'gallery-photo';
-                const label = currentLang === 'en' ? `Graduation photo ${index + 1}` : `毕业照片 ${index + 1}`;
+                const label = `${galleryLabel} ${index + 1}`;
                 button.setAttribute('aria-label', label);
                 const img = document.createElement('img');
                 img.src = src;
