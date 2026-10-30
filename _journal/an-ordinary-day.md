@@ -4,7 +4,7 @@ slug: an-ordinary-day
 date: 2026-10-30 23:22:00 +0800
 category: 生活
 summary: 代码之外，还有生活~
-cover: ""
+cover: https://i0.hdslb.com/bfs/new_dyn/b8d99b9d1c0b8570375512d68de5c7a2349982796.png
 ---
 近期看了很多部从未接触过题材的电影，很疯狂的举动。电影大致如下：
 - 情书
