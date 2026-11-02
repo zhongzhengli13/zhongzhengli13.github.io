@@ -3,7 +3,7 @@
     <time>2026.11.02</time>
     <div>
       <h3>首届CMG世界机器人登泰山大赛</h3>
-      <p>参加<strong>首届CMG世界机器人登泰山大赛人形竞速项目</strong>，与团队一同挑战泰山实地赛道。
+      <p>参加<strong>首届CMG世界机器人登泰山大赛人形竞速项目</strong>。有些遗憾，留待下次登山时再补上。
         <span class="hover-gallery" data-gallery-label="泰山人形竞速比赛照片" data-images='["static/assets/img/taishan/img_5933.jpg","static/assets/img/taishan/img_5936.jpg","static/assets/img/taishan/img_5939.jpg","static/assets/img/taishan/img_5926.jpg","static/assets/img/taishan/1966.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">查看比赛照片</button></span>
       </p>
     </div>
