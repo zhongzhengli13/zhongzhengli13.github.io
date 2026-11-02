@@ -1,5 +1,15 @@
 <div class="timeline">
   <article class="timeline-item">
+    <time>2026.11.02</time>
+    <div>
+      <h3>First CMG World Robot Mount Tai Climbing Competition</h3>
+      <p>Participated in the <strong>humanoid racing event at the First CMG World Robot Mount Tai Climbing Competition</strong>, taking on the Mount Tai course with the team.
+        <span class="hover-gallery" data-gallery-label="Mount Tai humanoid racing competition photos" data-images='["static/assets/img/taishan/img_5933.jpg","static/assets/img/taishan/img_5936.jpg","static/assets/img/taishan/img_5939.jpg","static/assets/img/taishan/img_5926.jpg","static/assets/img/taishan/1966.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">View competition photos</button></span>
+      </p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
     <time>2026.09.20 - 09.27</time>
     <div>
       <h3>Mathematical Modeling Competition</h3>
