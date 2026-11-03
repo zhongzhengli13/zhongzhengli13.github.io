@@ -6,6 +6,7 @@
       <li><strong>ICPC 西部赛</strong><span>铜牌，2024.03</span></li>
       <li><strong>ICPC 丝绸之路中国邀请赛</strong><span>银牌，2024.06</span></li>
       <li><strong>睿抗机器人开发者大赛</strong><span>国家一等奖，2024.11</span></li>
+      <li><strong>首届CMG世界机器人登泰山大赛人形竞速挑战赛</strong><span>第三名，2026.11</span></li>
     </ul>
   </section>
 
