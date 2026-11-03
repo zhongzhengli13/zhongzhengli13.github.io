@@ -308,7 +308,7 @@ section + section::before {
 
 
 #avatar {
-    --avatar-height: max(130px,min(200px,calc(100vw/6)));
+    --avatar-height: max(130px,min(220px,calc(100vw/5.5)));
     position: relative;
     height: 0;
     top:min(-65px,max(-100px,calc(-1*100vw/12)));
