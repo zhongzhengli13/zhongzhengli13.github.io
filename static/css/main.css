@@ -79,7 +79,7 @@
         color: var(--link-color);
     }
 
-    #avatar img {
+    #avatar .profile-photo {
         box-shadow: 5px 5px 5px var(--shadow-color);
     }
 
@@ -308,6 +308,7 @@ section + section::before {
 
 
 #avatar {
+    --avatar-height: max(130px,min(200px,calc(100vw/6)));
     position: relative;
     height: 0;
     top:min(-65px,max(-100px,calc(-1*100vw/12)));
@@ -317,12 +318,33 @@ section + section::before {
     z-index: 9000;
 }
 
-#avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+#avatar .profile-photo {
+    position: relative;
+    display: block;
+    width: calc(var(--avatar-height) * 0.8);
+    height: var(--avatar-height);
+    overflow: hidden;
+    box-shadow: 5px 5px 5px var(--shadow-color);
     border: 4px solid var(--bg-primary);
     border-radius: 8px;
     background: var(--bg-primary);
+    cursor: zoom-in;
+}
+
+#avatar .profile-photo:focus-visible {
+    outline: 3px solid var(--h-title-color);
+    outline-offset: 4px;
+}
+
+/* Focus on the two upper bodies; the linked photo keeps the full composition. */
+#avatar img {
+    position: absolute;
+    width: 160%;
+    height: auto;
+    max-width: none;
+    left: -40%;
+    top: -27%;
+    box-shadow: none;
 }
 
 .lang-toggle {
@@ -689,12 +711,10 @@ section + section::before {
 
 @media screen and (max-width: 991px) {
     #avatar {
+        --avatar-height: 110px;
         margin: 0 1rem 0 0;
         float: right;
         top: -60px;
-    }
-    #avatar img {
-        height: 110px;
     }
 
     .top-section {

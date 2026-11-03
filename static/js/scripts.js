@@ -496,6 +496,12 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     document.addEventListener('click', (event) => {
+        const photo = event.target.closest('[data-profile-photo]');
+        if (photo && event.button === 0 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+            event.preventDefault();
+            openLightbox(photo.href, photo.querySelector('img').alt);
+            return;
+        }
         const cvTrigger = event.target.closest('[data-cv-toast]');
         if (!cvTrigger) return;
         event.preventDefault();
