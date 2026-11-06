@@ -3,11 +3,13 @@
     <time>2026.11.02</time>
     <div>
       <h3>首届CMG世界机器人登泰山大赛</h3>
-      <p>参加<strong>首届CMG世界机器人登泰山大赛人形竞速项目</strong>，获得<strong>挑战赛第三名</strong>。有些遗憾，留待下次登山时再补上。</p>
-      <div class="timeline-media" role="group" aria-label="比赛影像">
-        <span class="hover-gallery" data-gallery-label="泰山人形竞速比赛照片" data-images='["static/assets/img/taishan/challenge_results.png","static/assets/img/taishan/img_5933.jpg","static/assets/img/taishan/img_5936.jpg","static/assets/img/taishan/img_5939.jpg","static/assets/img/taishan/img_5926.jpg","static/assets/img/taishan/1966.jpg"]'><button type="button" class="hover-gallery-trigger timeline-media-action" aria-expanded="false"><span class="timeline-media-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="3"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="m21 15-5-5L5 21"></path></svg></span><span class="timeline-media-label"><strong>比赛照片</strong><small>赛场记录</small></span></button></span>
-        <a class="timeline-media-action timeline-media-video" href="https://weixin.qq.com/sph/AH2zfz3jAe" target="_blank" rel="noopener noreferrer"><span class="timeline-media-icon"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 6 9 6-9 6Z" fill="currentColor" stroke="none"></path></svg></span><span class="timeline-media-label"><strong>央视采访</strong><small>微信视频号</small></span><svg class="timeline-media-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M4 4h8v8"></path></svg></a>
-      </div>
+      <p>参加<strong>首届CMG世界机器人登泰山大赛人形竞速项目</strong>，获得<strong>挑战赛第三名</strong>。有些遗憾，留待下次登山时再补上。
+        <span class="timeline-links" role="group" aria-label="比赛影像">
+          <span class="hover-gallery" data-gallery-label="泰山人形竞速比赛照片" data-images='["static/assets/img/taishan/challenge_results.png","static/assets/img/taishan/img_5933.jpg","static/assets/img/taishan/img_5936.jpg","static/assets/img/taishan/img_5939.jpg","static/assets/img/taishan/img_5926.jpg","static/assets/img/taishan/1966.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">查看比赛照片</button></span>
+          <span class="timeline-link-divider" aria-hidden="true">·</span>
+          <a class="timeline-video-link" href="https://weixin.qq.com/sph/AH2zfz3jAe" target="_blank" rel="noopener noreferrer" aria-label="央视采访，微信视频号（新标签页打开）">央视采访<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M4 4h8v8"></path></svg></a>
+        </span>
+      </p>
     </div>
   </article>
 
