@@ -5,6 +5,7 @@
       <h3>首届CMG世界机器人登泰山大赛</h3>
       <p>参加<strong>首届CMG世界机器人登泰山大赛人形竞速项目</strong>，获得<strong>挑战赛第三名</strong>。有些遗憾，留待下次登山时再补上。
         <span class="hover-gallery" data-gallery-label="泰山人形竞速比赛照片" data-images='["static/assets/img/taishan/challenge_results.png","static/assets/img/taishan/img_5933.jpg","static/assets/img/taishan/img_5936.jpg","static/assets/img/taishan/img_5939.jpg","static/assets/img/taishan/img_5926.jpg","static/assets/img/taishan/1966.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">查看比赛照片</button></span>
+        <a href="https://weixin.qq.com/sph/AH2zfz3jAe" target="_blank" rel="noopener noreferrer">观看央视采访（微信视频） ↗</a>
       </p>
     </div>
   </article>

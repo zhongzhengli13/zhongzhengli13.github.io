@@ -5,6 +5,7 @@
       <h3>First CMG World Robot Mount Tai Climbing Competition</h3>
       <p>Participated in the <strong>humanoid racing event at the First CMG World Robot Mount Tai Climbing Competition</strong>, earning <strong>third place in the challenge race</strong>. A few regrets remain, to be made up for on the next climb.
         <span class="hover-gallery" data-gallery-label="Mount Tai humanoid racing competition photos" data-images='["static/assets/img/taishan/challenge_results.png","static/assets/img/taishan/img_5933.jpg","static/assets/img/taishan/img_5936.jpg","static/assets/img/taishan/img_5939.jpg","static/assets/img/taishan/img_5926.jpg","static/assets/img/taishan/1966.jpg"]'><button type="button" class="hover-gallery-trigger" aria-expanded="false">View competition photos</button></span>
+        <a href="https://weixin.qq.com/sph/AH2zfz3jAe" target="_blank" rel="noopener noreferrer">Watch the CCTV interview (WeChat video) ↗</a>
       </p>
     </div>
   </article>
