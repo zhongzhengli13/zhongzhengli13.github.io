@@ -1,27 +1,4 @@
-<div class="award-grid">
-  <section class="award-panel">
-    <div class="section-kicker">Competitions</div>
-    <ul class="compact-list">
-      <li><strong>ICPC Silk Road China Invitational</strong><span>Silver Medal, 2023.06</span></li>
-      <li><strong>ICPC Western Regional</strong><span>Bronze Medal, 2024.03</span></li>
-      <li><strong>ICPC Silk Road China Invitational</strong><span>Silver Medal, 2024.06</span></li>
-      <li><strong>RoboCom Robot Developer Competition</strong><span>National First Prize, 2024.11</span></li>
-    </ul>
-  </section>
-
-  <section class="award-panel">
-    <div class="section-kicker">Rankings</div>
-    <ul class="compact-list">
-      <li><strong>Tianchi Big Data Competition: Building Recognition</strong><span>Rank 63 / 6399, 2025.06</span></li>
-      <li><strong>First CMG World Robot Mount Tai Climbing Competition — Humanoid Challenge Race</strong><span>Third Place, 2026.11</span></li>
-    </ul>
-  </section>
-
-  <section class="award-panel">
-    <div class="section-kicker">Scholarships</div>
-    <ul class="compact-list">
-      <li><strong>Inner Mongolia Autonomous Region Scholarship</strong><span>2023.10</span></li>
-      <li><strong>National Scholarship for Undergraduates</strong><span>2024.09</span></li>
-    </ul>
-  </section>
+<div class="experience-grid">
+  <div><h3>Education</h3><ol class="education-list"><li><div><strong>Shandong University</strong><span>Master's student · Recommended admission</span></div><time>2026—2029</time></li><li><div><strong>Inner Mongolia Agricultural University</strong><span>B.Eng. in Computer Science and Technology</span></div><time>2022—2026</time></li></ol></div>
+  <div><h3>Selected honors</h3><ul class="honors-list"><li><strong>First CMG World Robot Mount Tai Climbing Competition — Humanoid Challenge Race</strong><span>Third Place, 2026.11</span></li><li><strong>RoboCom Robot Developer Competition</strong><span>National First Prize, 2024.11</span></li><li><strong>National Scholarship for Undergraduates</strong><span>2024.09</span></li></ul><details class="academic-details"><summary>More competitions and scholarships</summary><ul class="honors-list"><li><strong>Inner Mongolia Autonomous Region Scholarship</strong><span>2023.10</span></li><li><strong>Tianchi Big Data Competition: Building Recognition</strong><span>Rank 63 / 6399, 2025.06</span></li><li><strong>ICPC Silk Road China Invitational</strong><span>Silver Medal, 2023.06</span></li><li><strong>ICPC Western Regional</strong><span>Bronze Medal, 2024.03</span></li><li><strong>ICPC Silk Road China Invitational</strong><span>Silver Medal, 2024.06</span></li></ul></details></div>
 </div>

@@ -1,27 +1,4 @@
-<div class="award-grid">
-  <section class="award-panel">
-    <div class="section-kicker">Competitions</div>
-    <ul class="compact-list">
-      <li><strong>ICPC 丝绸之路中国邀请赛</strong><span>银牌，2023.06</span></li>
-      <li><strong>ICPC 西部赛</strong><span>铜牌，2024.03</span></li>
-      <li><strong>ICPC 丝绸之路中国邀请赛</strong><span>银牌，2024.06</span></li>
-      <li><strong>睿抗机器人开发者大赛</strong><span>国家一等奖，2024.11</span></li>
-    </ul>
-  </section>
-
-  <section class="award-panel">
-    <div class="section-kicker">Rankings</div>
-    <ul class="compact-list">
-      <li><strong>天池大数据竞赛：地球观察员建筑物识别学习赛</strong><span>Rank 63 / 6399，2025.06</span></li>
-      <li><strong>首届CMG世界机器人登泰山大赛人形竞速挑战赛</strong><span>第三名，2026.11</span></li>
-    </ul>
-  </section>
-
-  <section class="award-panel">
-    <div class="section-kicker">Scholarships</div>
-    <ul class="compact-list">
-      <li><strong>内蒙古自治区奖学金</strong><span>2023.10</span></li>
-      <li><strong>本科生国家奖学金</strong><span>2024.09</span></li>
-    </ul>
-  </section>
+<div class="experience-grid">
+  <div><h3>教育经历</h3><ol class="education-list"><li><div><strong>山东大学</strong><span>硕士研究生 · 保研</span></div><time>2026—2029</time></li><li><div><strong>内蒙古农业大学</strong><span>计算机科学与技术 · 本科</span></div><time>2022—2026</time></li></ol></div>
+  <div><h3>精选荣誉</h3><ul class="honors-list"><li><strong>首届CMG世界机器人登泰山大赛人形竞速挑战赛</strong><span>第三名，2026.11</span></li><li><strong>睿抗机器人开发者大赛</strong><span>国家一等奖，2024.11</span></li><li><strong>本科生国家奖学金</strong><span>2024.09</span></li></ul><details class="academic-details"><summary>更多竞赛与奖学金</summary><ul class="honors-list"><li><strong>内蒙古自治区奖学金</strong><span>2023.10</span></li><li><strong>天池大数据竞赛：地球观察员建筑物识别学习赛</strong><span>Rank 63 / 6399，2025.06</span></li><li><strong>ICPC 丝绸之路中国邀请赛</strong><span>银牌，2023.06</span></li><li><strong>ICPC 西部赛</strong><span>铜牌，2024.03</span></li><li><strong>ICPC 丝绸之路中国邀请赛</strong><span>银牌，2024.06</span></li></ul></details></div>
 </div>

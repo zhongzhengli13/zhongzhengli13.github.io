@@ -5,16 +5,22 @@ const section_names = ['home', 'projects', 'news', 'publications', 'awards']
 
 const i18n = {
     zh: {
-        'nav-home': '首页',
-        'nav-projects': '项目',
+        'nav-home': '关于',
+        'nav-projects': '研究',
         'nav-news': '动态',
         'nav-pubs': '论文',
-        'nav-awards': '奖项',
-        'nav-journal': '随笔',
-        'projects-subtitle': '<i class="bi bi-robot"></i>&nbsp;项目',
-        'news-subtitle': '<i class="bi bi-lightning-fill"></i>&nbsp;动态',
-        'publications-subtitle': '<i class="bi bi-file-text-fill"></i>&nbsp;论文',
-        'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;奖项',
+        'nav-awards': '经历',
+        'nav-journal': '随笔 ↗',
+        'projects-subtitle': '研究项目',
+        'news-subtitle': '近期动态',
+        'publications-subtitle': '论文',
+        'awards-subtitle': '教育与荣誉',
+        'skip-content': '跳到正文',
+        'affiliation': '硕士研究生 · 山东大学',
+        'portrait-caption': '泰山机器人比赛 · 2026',
+        'research-note': '从策略训练到真机验证',
+        'visitor-map': '访客足迹',
+        'video-source': '在 B 站打开 ↗',
         'music-kicker': 'LISTENING CORNER',
         'music-title': '一小段音乐时间',
         'music-empty': '在 scripts.js 的 musicTracks 中添加自己的音频链接后，即可开始播放。',
@@ -22,16 +28,22 @@ const i18n = {
         'content-retry': '重新加载'
     },
     en: {
-        'nav-home': 'HOME',
-        'nav-projects': 'PROJECTS',
-        'nav-news': 'NEWS',
-        'nav-pubs': 'PUBLICATIONS',
-        'nav-awards': 'AWARDS',
-        'nav-journal': 'JOURNAL',
-        'projects-subtitle': '<i class="bi bi-robot"></i>&nbsp;PROJECTS',
-        'news-subtitle': '<i class="bi bi-lightning-fill"></i>&nbsp;NEWS',
-        'publications-subtitle': '<i class="bi bi-file-text-fill"></i>&nbsp;PUBLICATIONS',
-        'awards-subtitle': '<i class="bi bi-award-fill"></i>&nbsp;AWARDS',
+        'nav-home': 'About',
+        'nav-projects': 'Research',
+        'nav-news': 'News',
+        'nav-pubs': 'Publications',
+        'nav-awards': 'Background',
+        'nav-journal': 'Journal ↗',
+        'projects-subtitle': 'Research',
+        'news-subtitle': 'Recent news',
+        'publications-subtitle': 'Publications',
+        'awards-subtitle': 'Education & honors',
+        'skip-content': 'Skip to content',
+        'affiliation': "Master's student · Shandong University",
+        'portrait-caption': 'Mount Tai robot competition · 2026',
+        'research-note': 'From policy learning to real-robot experiments',
+        'visitor-map': 'Visitor map',
+        'video-source': 'Open on Bilibili ↗',
         'music-kicker': 'LISTENING CORNER',
         'music-title': 'A small playlist',
         'music-empty': 'Add your own audio links to musicTracks in scripts.js to start listening.',
@@ -51,6 +63,7 @@ function saveStorage(key, value) {
 let currentLang = readStorage('lang') === 'en' ? 'en' : 'zh';
 let contentController = null;
 let contentGeneration = 0;
+let refreshNavigation = () => {};
 
 function getDir() {
     return currentLang === 'en' ? content_dir + 'en/' : content_dir;
@@ -67,7 +80,9 @@ function applyI18n() {
         if (el && strings[id]) el.innerHTML = strings[id];
     });
     document.getElementById('lang-toggle').textContent = currentLang === 'zh' ? 'EN' : '中';
+    document.getElementById('lang-toggle').setAttribute('aria-label', currentLang === 'zh' ? 'Switch to English' : '切换为中文');
     document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+    updateThemeButton();
 }
 
 // Add only music you own or are licensed to redistribute. Example:
@@ -272,20 +287,53 @@ function getActiveTheme() {
 }
 
 function updateThemeButton() {
-    const button = document.querySelector('[data-dock-theme]');
-    if (!button) return;
-    const icon = button.querySelector('i');
     const isDark = getActiveTheme() === 'dark';
-    button.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-    if (icon) {
-        icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon-stars';
-    }
+    document.querySelectorAll('[data-dock-theme], [data-theme-toggle]').forEach(button => {
+        const icon = button.querySelector('i');
+        button.setAttribute('aria-label', currentLang === 'zh'
+            ? (isDark ? '切换为浅色模式' : '切换为深色模式')
+            : (isDark ? 'Switch to light mode' : 'Switch to dark mode'));
+        button.setAttribute('aria-pressed', String(isDark));
+        if (icon) icon.className = isDark ? 'bi bi-sun' : 'bi bi-moon-stars';
+    });
 }
 
 function setTheme(theme) {
     document.documentElement.dataset.theme = theme;
     saveStorage('theme', theme);
     updateThemeButton();
+}
+
+function initResearchVideos() {
+    const dialog = document.getElementById('research-video-dialog');
+    if (!dialog) return;
+    const frame = document.getElementById('research-video-frame');
+    let previousOverflow = '';
+    dialog.querySelector('[data-video-close]').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => {
+        frame.replaceChildren();
+        document.body.style.overflow = previousOverflow;
+    });
+    document.addEventListener('click', event => {
+        const button = event.target.closest('[data-research-video]');
+        if (!button || dialog.open) return;
+        const bvid = button.dataset.researchVideo;
+        if (!/^BV[0-9A-Za-z]{10}$/.test(bvid)) return;
+        const title = button.dataset.videoTitle;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://player.bilibili.com/player.html?isOutside=true&bvid=${bvid}&page=1&high_quality=1&danmaku=0&autoplay=0`;
+        iframe.title = title;
+        iframe.allow = 'encrypted-media; fullscreen';
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        document.getElementById('research-video-title').textContent = title;
+        document.getElementById('research-video-source').href = `https://www.bilibili.com/video/${bvid}/`;
+        frame.replaceChildren(iframe);
+        previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        dialog.showModal();
+    });
 }
 
 function initMascotDock() {
@@ -405,7 +453,7 @@ function loadContent() {
     const strings = i18n[currentLang];
     const isCurrent = () => generation === contentGeneration;
     const fetchText = async filename => {
-        const response = await fetch(directory + filename, { signal });
+        const response = await fetch(directory + filename, { signal, cache: 'no-cache' });
         if (!response.ok) throw new Error(`Unable to load ${filename}: HTTP ${response.status}`);
         return response.text();
     };
@@ -445,6 +493,7 @@ function loadContent() {
                     loadMathJax(target);
                 }
                 initHoverGalleries();
+                refreshNavigation();
             })
             .catch(error => {
                 if (!isCurrent() || error.name === 'AbortError') return;
@@ -459,6 +508,7 @@ function loadContent() {
                 retry.addEventListener('click', loadContent);
                 target.replaceChildren(message, retry);
                 target.setAttribute('aria-busy', 'false');
+                refreshNavigation();
             });
     })
 }
@@ -466,14 +516,35 @@ function loadContent() {
 
 window.addEventListener('DOMContentLoaded', event => {
 
-    // Activate Bootstrap scrollspy on the main nav element
+    // Track the section under the header, including short sections at page end.
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            offset: 74,
-        });
-    };
+        const sections = [...mainNav.querySelectorAll('.nav-link[href^="#"]')]
+            .map(link => ({ link, section: document.getElementById(link.hash.slice(1)) }))
+            .filter(item => item.section);
+        refreshNavigation = () => {
+            let active = sections[0];
+            const ready = section_names.every(name => document.getElementById(name + '-md').getAttribute('aria-busy') === 'false');
+            if (ready) {
+                const cutoff = mainNav.offsetHeight + 96;
+                sections.forEach(item => { if (item.section.getBoundingClientRect().top <= cutoff) active = item; });
+                if (scrollY + innerHeight >= document.documentElement.scrollHeight - 2) active = sections[sections.length - 1];
+            }
+            sections.forEach(item => {
+                item.link.classList.toggle('active', item === active);
+                if (item === active) item.link.setAttribute('aria-current', 'location');
+                else item.link.removeAttribute('aria-current');
+            });
+        };
+        let scheduled = false;
+        window.addEventListener('scroll', () => {
+            if (scheduled) return;
+            scheduled = true;
+            requestAnimationFrame(() => { refreshNavigation(); scheduled = false; });
+        }, { passive: true });
+        window.addEventListener('resize', refreshNavigation);
+        refreshNavigation();
+    }
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
@@ -482,7 +553,7 @@ window.addEventListener('DOMContentLoaded', event => {
     );
     responsiveNavItems.map(function (responsiveNavItem) {
         responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+            if (window.getComputedStyle(navbarToggler).display !== 'none' && document.getElementById('navbarResponsive').classList.contains('show')) {
                 navbarToggler.click();
             }
         });
@@ -490,9 +561,15 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Language toggle
     document.getElementById('lang-toggle').addEventListener('click', () => {
+        const videoDialog = document.getElementById('research-video-dialog');
+        if (videoDialog?.open) videoDialog.close();
         currentLang = currentLang === 'zh' ? 'en' : 'zh';
         saveStorage('lang', currentLang);
         loadContent();
+    });
+
+    document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+        setTheme(getActiveTheme() === 'dark' ? 'light' : 'dark');
     });
 
     document.addEventListener('click', (event) => {
@@ -537,5 +614,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
     initMascotDock();
     initMusicPlayer();
+    initResearchVideos();
     loadContent();
 });

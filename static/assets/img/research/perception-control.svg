@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320" role="img" aria-labelledby="title desc">
+  <title id="title">Perception–control workflow schematic</title>
+  <desc id="desc">Environmental observations guide a learned locomotion policy and real-robot deployment.</desc>
+  <rect width="480" height="320" fill="#f5f7f5"/>
+  <g fill="none" stroke="#e0e6e1" stroke-width="1"><path d="M30 80h420M30 120h420M30 160h420M30 200h420M30 240h420M80 50v230M160 50v230M240 50v230M320 50v230M400 50v230"/></g>
+  <text x="28" y="31" font-family="Arial,sans-serif" font-size="14" letter-spacing="2" fill="#66756e">PERCEPTIVE LOCOMOTION</text>
+  <g fill="#fff" stroke="#b7c7bd" stroke-width="1.5"><rect x="28" y="105" width="112" height="108" rx="5"/><rect x="184" y="105" width="112" height="108" rx="5"/><rect x="340" y="105" width="112" height="108" rx="5"/></g>
+  <g fill="none" stroke="#247a63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M53 157h16v-21h19v10h23v-25"/><path d="m58 127 46 33M58 165l46-38" stroke-dasharray="3 5" opacity=".45"/>
+    <circle cx="220" cy="135" r="4"/><circle cx="220" cy="157" r="4"/><circle cx="260" cy="144" r="4"/><circle cx="260" cy="167" r="4"/><path d="m224 135 32 9m-32-9 32 32m-32-10 32-13m-32 13 32 10" opacity=".6"/>
+    <circle cx="397" cy="128" r="8"/><path d="M397 137v25m-15-14 15-7 15 10m-15 11-14 17m14-17 14 16m-32 3h10m17-1h10"/>
+    <path d="M148 159h28m-6-5 6 5-6 5M304 159h28m-6-5 6 5-6 5"/>
+  </g>
+  <g font-family="Arial,sans-serif" font-size="18" text-anchor="middle" fill="#344b41"><text x="84" y="194">Perception</text><text x="240" y="194">Policy</text><text x="396" y="194">Real robot</text></g>
+  <path d="M396 221v24H84v-24" fill="none" stroke="#98afa1" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <text x="240" y="264" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" fill="#6a7b72">TRAIN · DEPLOY · ITERATE</text>
+  <text x="28" y="300" font-family="Arial,sans-serif" font-size="12" fill="#839086">Workflow schematic</text>
+</svg>
