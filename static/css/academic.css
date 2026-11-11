@@ -11,10 +11,11 @@
     margin: 0;
     background: var(--bg-primary);
     color: var(--text-primary);
-    font-family: "Times New Roman", Times, "Noto Serif CJK SC", "Songti SC", SimSun, serif;
+    /* Keep Latin typography; use the reference site's screen-friendly Chinese sans fonts. */
+    font-family: "Times New Roman", Times, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
     font-size: 18px;
     line-height: 1.75;
-    -webkit-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
 }
 .academic-page h1, .academic-page h2, .academic-page h3,
 .academic-page button, .academic-page input, .academic-page summary {
