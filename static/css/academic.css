@@ -11,9 +11,9 @@
     margin: 0;
     background: var(--bg-primary);
     color: var(--text-primary);
-    /* Keep Latin typography; use the reference site's screen-friendly Chinese sans fonts. */
-    font-family: "Times New Roman", Times, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
-    font-size: 18px;
+    font-family: "Source Sans 3 Variable", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
 }
@@ -47,12 +47,12 @@
 .academic-page section { scroll-margin-top: 88px; }
 .academic-page section + section::before { display: none; }
 .academic-page #home, .academic-page #projects, .academic-page #publications, .academic-page #news, .academic-page #awards { opacity: 1; animation: none; background: transparent !important; }
-.academic-page .main-body { color: var(--text-primary) !important; font-size: 18px; font-weight: 400; line-height: 1.75; }
+.academic-page .main-body { color: var(--text-primary) !important; font-size: 17px; font-weight: 400; line-height: 1.75; }
 .academic-page .main-body p { margin: 0 0 12px; }
 .academic-intro { padding: 62px 0 42px; }
 .academic-profile { display: grid; grid-template-columns: minmax(0, 1fr) 216px; align-items: start; gap: 64px; }
 .academic-bio { min-width: 0; }
-.academic-page #home-subtitle { margin: 0 0 5px; color: var(--text-primary); font-size: 36px; font-weight: 400; line-height: 1.3; letter-spacing: normal; }
+.academic-page #home-subtitle { margin: 0 0 5px; color: var(--text-primary); font-size: 36px; font-weight: 600; line-height: 1.3; letter-spacing: normal; }
 .academic-name-cn { display: inline-block; margin-left: 10px; color: var(--text-secondary); font-size: 22px; font-weight: 400; letter-spacing: normal; vertical-align: 3px; }
 .academic-affiliation { margin: 0 0 24px; color: var(--text-secondary); font-size: 17px; }
 .academic-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 19px; margin-top: 20px; font-size: 16px; }
@@ -66,7 +66,7 @@
 
 .academic-section { padding: 35px 0; }
 .academic-section-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-top: 25px; margin-bottom: 26px; border-top: 1px solid var(--border-color); }
-.academic-page .academic-section-heading h2 { margin: 0; color: var(--text-primary); font-size: 26px; font-weight: 400; line-height: 1.5; letter-spacing: normal; }
+.academic-page .academic-section-heading h2 { margin: 0; color: var(--text-primary); font-size: 26px; font-weight: 500; line-height: 1.5; letter-spacing: normal; }
 .research-list { display: grid; gap: 34px; }
 .research-entry { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 30px; align-items: start; }
 .research-figure { margin: 3px 0 0; }
@@ -74,7 +74,7 @@
 .research-figure figcaption { margin-top: 7px; color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
 .research-copy { min-width: 0; }
 .research-copy h3 { margin: 0 0 9px; font-size: 20px; font-weight: 400; line-height: 1.5; }
-.academic-page .research-copy > p { margin-bottom: 10px; font-size: 18px; line-height: 1.8; }
+.academic-page .research-copy > p { margin-bottom: 10px; font-size: 17px; line-height: 1.75; }
 .research-links { display: flex; flex-wrap: wrap; gap: 5px 22px; margin: 13px 0 10px; font-size: 16px; }
 .research-links button { padding: 0; border: 0; background: transparent; color: var(--link-color); text-align: left; line-height: inherit; }
 .research-links button:hover { text-decoration: underline; text-underline-offset: 3px; }
@@ -83,7 +83,7 @@
 .academic-details summary { width: fit-content; cursor: pointer; color: var(--text-secondary); }
 .academic-details summary:hover { color: var(--accent-green); }
 .academic-details[open] summary { margin-bottom: 12px; }
-.academic-details dl { margin: 0; padding: 12px 15px; border-left: 1px solid var(--border-color); background: transparent; font-size: 18px; line-height: 1.8; }
+.academic-details dl { margin: 0; padding: 12px 15px; border-left: 1px solid var(--border-color); background: transparent; font-size: 17px; line-height: 1.75; }
 .academic-details dl > div + div { margin-top: 9px; }
 .academic-details dt { color: var(--text-primary); font-weight: 400; }
 .academic-details dd { margin: 0; }
@@ -104,7 +104,7 @@
 .academic-page .timeline-item { grid-template-columns: 128px minmax(0, 1fr); gap: 22px; padding-left: 0; }
 .academic-page .timeline-item time { padding-top: 2px; color: var(--text-secondary); font-size: 15px; font-weight: 400; line-height: 1.7; }
 .academic-page .timeline-item h3 { margin-bottom: 4px; font-size: 17px; font-weight: 400; line-height: 1.6; }
-.academic-page .timeline-item p { margin-bottom: 0; color: var(--text-secondary); font-size: 18px; line-height: 1.8; }
+.academic-page .timeline-item p { margin-bottom: 0; color: var(--text-secondary); font-size: 17px; line-height: 1.75; }
 .academic-page .timeline-item p strong { color: var(--text-primary); font-weight: 400; }
 .academic-page .timeline-links, .academic-page .timeline-item .hover-gallery-trigger { font-size: 15px; }
 .academic-page .timeline-item .hover-gallery { margin-left: 4px; }
@@ -163,7 +163,7 @@
     .academic-page #avatar { grid-column: 2; grid-row: 1 / 3; margin: 0; }
     .academic-portrait figcaption { margin-top: 6px; font-size: 14px; }
     .academic-page #home-md { grid-column: 1 / -1; margin-top: 5px; }
-    .academic-page .main-body { font-size: 18px; }
+    .academic-page .main-body { font-size: 17px; }
     .academic-links { margin-top: 17px; gap: 6px 17px; }
     .academic-section { padding: 24px 0; }
     .academic-section-heading { margin-bottom: 22px; padding-top: 22px; }
@@ -173,7 +173,7 @@
     .research-figure { max-width: 320px; margin: 0; }
     .research-figure img { aspect-ratio: auto; }
     .research-copy h3 { font-size: 20px; }
-    .academic-page .research-copy > p { font-size: 18px; }
+    .academic-page .research-copy > p { font-size: 17px; }
     .paper-entry { grid-template-columns: 1fr; gap: 8px; }
     .paper-copy h3 { font-size: 18px; }
     .academic-page .timeline-item { grid-template-columns: 1fr; gap: 4px; }
