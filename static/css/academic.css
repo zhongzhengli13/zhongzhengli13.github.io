@@ -193,6 +193,7 @@
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .academic-page { --bg-primary: #191919; --bg-secondary: #252525; --text-primary: #eee; --text-secondary: #b3b3b3; --border-color: #3b3b3b; --link-color: #8ab4e8; --accent-green: #8ab4e8; } }
 
 .research-stills { display: grid; gap: 8px; }
+.research-stills > :only-child { grid-column: 1 / -1; }
 .research-stills button { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .research-stills img { width: 100%; height: auto; }
 @media (max-width: 700px) { .research-stills { grid-template-columns: 1fr 1fr; gap: 8px; } .research-figure { max-width: none; } }

@@ -1,7 +1,11 @@
 <div class="research-list">
   <article class="research-entry" id="perceptive-box-traversal">
     <figure class="research-figure">
-      <img src="static/assets/img/research/box-traversal.jpg" width="852" height="480" alt="双足机器人撑在两个相邻的箱体上，正在翻越箱体" loading="lazy">
+      <div class="research-stills">
+        <button type="button" data-research-video="BV19dsz6eEtQ" data-video-title="双足机器人感知翻越箱体" aria-label="播放双足机器人感知翻越箱体测试视频">
+          <img src="static/assets/img/research/box-traversal.jpg" width="852" height="480" alt="双足机器人撑在两个相邻的箱体上，正在翻越箱体" loading="lazy">
+        </button>
+      </div>
       <figcaption>翻越箱体测试，视频截图</figcaption>
     </figure>
     <div class="research-copy">

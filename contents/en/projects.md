@@ -1,7 +1,11 @@
 <div class="research-list">
   <article class="research-entry" id="perceptive-box-traversal">
     <figure class="research-figure">
-      <img src="static/assets/img/research/box-traversal.jpg" width="852" height="480" alt="A bipedal robot using its arms for support as it traverses two adjacent boxes" loading="lazy">
+      <div class="research-stills">
+        <button type="button" data-research-video="BV19dsz6eEtQ" data-video-title="Perceptive box traversal with a bipedal robot" aria-label="Play the bipedal box traversal test video">
+          <img src="static/assets/img/research/box-traversal.jpg" width="852" height="480" alt="A bipedal robot using its arms for support as it traverses two adjacent boxes" loading="lazy">
+        </button>
+      </div>
       <figcaption>Box traversal test, frame from my video</figcaption>
     </figure>
     <div class="research-copy">
