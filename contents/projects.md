@@ -1,5 +1,9 @@
 <div class="research-list">
-  <article class="research-entry research-entry-text" id="perceptive-box-traversal">
+  <article class="research-entry" id="perceptive-box-traversal">
+    <figure class="research-figure">
+      <img src="static/assets/img/research/box-traversal.jpg" width="852" height="480" alt="双足机器人撑在两个相邻的箱体上，正在翻越箱体" loading="lazy">
+      <figcaption>翻越箱体测试，视频截图</figcaption>
+    </figure>
     <div class="research-copy">
       <h3>双足机器人感知翻越箱体</h3>
       <p class="research-period">测试阶段 · <time datetime="2026-11-10">2026.11.10</time> — 至今</p>

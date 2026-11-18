@@ -1,5 +1,9 @@
 <div class="research-list">
-  <article class="research-entry research-entry-text" id="perceptive-box-traversal">
+  <article class="research-entry" id="perceptive-box-traversal">
+    <figure class="research-figure">
+      <img src="static/assets/img/research/box-traversal.jpg" width="852" height="480" alt="A bipedal robot using its arms for support as it traverses two adjacent boxes" loading="lazy">
+      <figcaption>Box traversal test, frame from my video</figcaption>
+    </figure>
     <div class="research-copy">
       <h3>Perceptive Box Traversal with a Bipedal Robot</h3>
       <p class="research-period">Testing · <time datetime="2026-11-10">Nov 10, 2026</time> — Present</p>
