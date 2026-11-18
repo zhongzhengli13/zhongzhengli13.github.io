@@ -196,5 +196,3 @@
 .research-stills button { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: pointer; }
 .research-stills img { width: 100%; height: auto; }
 @media (max-width: 700px) { .research-stills { grid-template-columns: 1fr 1fr; gap: 8px; } .research-figure { max-width: none; } }
-
-.academic-page .research-copy > .research-period { color: var(--text-secondary); font-size: 15px; }

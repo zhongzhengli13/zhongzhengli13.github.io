@@ -6,7 +6,6 @@
     </figure>
     <div class="research-copy">
       <h3>Perceptive Box Traversal with a Bipedal Robot</h3>
-      <p class="research-period">Testing · <time datetime="2026-11-10">Nov 10, 2026</time> — Present</p>
       <p>I am testing perception and locomotion control for a bipedal robot to traverse box obstacles. This project is currently in the testing stage.</p>
       <div class="research-links"><button type="button" data-research-video="BV19dsz6eEtQ" data-video-title="Perceptive box traversal with a bipedal robot">Watch test video</button><a href="https://www.bilibili.com/video/BV19dsz6eEtQ/" target="_blank" rel="noopener noreferrer">Video on Bilibili ↗</a></div>
     </div>
