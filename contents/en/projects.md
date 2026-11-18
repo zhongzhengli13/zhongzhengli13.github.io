@@ -1,4 +1,12 @@
 <div class="research-list">
+  <article class="research-entry research-entry-text" id="perceptive-box-traversal">
+    <div class="research-copy">
+      <h3>Perceptive Box Traversal with a Bipedal Robot</h3>
+      <p class="research-period">Testing · <time datetime="2026-11-10">Nov 10, 2026</time> — Present</p>
+      <p>I am testing perception and locomotion control for a bipedal robot to traverse box obstacles. This project is currently in the testing stage.</p>
+      <div class="research-links"><button type="button" data-research-video="BV19dsz6eEtQ" data-video-title="Perceptive box traversal with a bipedal robot">Watch test video</button><a href="https://www.bilibili.com/video/BV19dsz6eEtQ/" target="_blank" rel="noopener noreferrer">Video on Bilibili ↗</a></div>
+    </div>
+  </article>
   <article class="research-entry">
     <figure class="research-figure"><div class="research-stills"><button type="button" data-research-video="BV1Xubj6GEFr" data-video-title="Perceptive locomotion across multiple terrains"><img src="static/assets/img/research/terrain-walking.jpg" width="640" height="360" alt="Video frame of the bipedal robot walking on indoor terrain platforms" loading="lazy"></button><button type="button" data-research-video="BV1Eh8X6oEHT" data-video-title="Real-robot stair ascent and descent"><img src="static/assets/img/research/stair-walking.jpg" width="640" height="360" alt="Video frame of the bipedal robot stepping onto outdoor stairs" loading="lazy"></button></div><figcaption>Multi-terrain walking and stairs, frames from my videos</figcaption></figure>
     <div class="research-copy">

@@ -1,5 +1,13 @@
 <div class="timeline">
   <article class="timeline-item">
+    <time datetime="2026-11-10">2026.11.10 - Present</time>
+    <div>
+      <h3>Perceptive Box-Traversal Tests with a Bipedal Robot</h3>
+      <p>Started testing a bipedal robot's ability to traverse box obstacles using perception. The project is currently in the testing stage. <a href="https://www.bilibili.com/video/BV19dsz6eEtQ/" target="_blank" rel="noopener noreferrer">Watch test video ↗</a></p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
     <time>2026.11.02</time>
     <div>
       <h3>First CMG World Robot Mount Tai Climbing Competition</h3>

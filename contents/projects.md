@@ -1,4 +1,12 @@
 <div class="research-list">
+  <article class="research-entry research-entry-text" id="perceptive-box-traversal">
+    <div class="research-copy">
+      <h3>双足机器人感知翻越箱体</h3>
+      <p class="research-period">测试阶段 · <time datetime="2026-11-10">2026.11.10</time> — 至今</p>
+      <p>围绕箱体障碍开展双足机器人感知与运动控制测试，探索机器人翻越箱体的能力。目前仍处于测试阶段。</p>
+      <div class="research-links"><button type="button" data-research-video="BV19dsz6eEtQ" data-video-title="双足机器人感知翻越箱体">观看测试视频</button><a href="https://www.bilibili.com/video/BV19dsz6eEtQ/" target="_blank" rel="noopener noreferrer">B 站原视频 ↗</a></div>
+    </div>
+  </article>
   <article class="research-entry">
     <figure class="research-figure"><div class="research-stills"><button type="button" data-research-video="BV1Xubj6GEFr" data-video-title="多地形感知一镜到底"><img src="static/assets/img/research/terrain-walking.jpg" width="640" height="360" alt="多地形行走视频截图，双足机器人站在实验平台边缘" loading="lazy"></button><button type="button" data-research-video="BV1Eh8X6oEHT" data-video-title="真机上下楼梯"><img src="static/assets/img/research/stair-walking.jpg" width="640" height="360" alt="上下楼梯视频截图，双足机器人迈上室外台阶" loading="lazy"></button></div><figcaption>多地形行走与上下楼梯，视频截图</figcaption></figure>
     <div class="research-copy">

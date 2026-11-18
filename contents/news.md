@@ -1,5 +1,13 @@
 <div class="timeline">
   <article class="timeline-item">
+    <time datetime="2026-11-10">2026.11.10 - 至今</time>
+    <div>
+      <h3>双足机器人感知翻越箱体测试</h3>
+      <p>开始开展双足机器人感知翻越箱体任务，目前处于测试阶段。<a href="https://www.bilibili.com/video/BV19dsz6eEtQ/" target="_blank" rel="noopener noreferrer">观看测试视频 ↗</a></p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
     <time>2026.11.02</time>
     <div>
       <h3>首届CMG世界机器人登泰山大赛</h3>
