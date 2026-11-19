@@ -11,7 +11,9 @@
     <div class="research-copy">
       <h3>双足机器人感知翻越箱体</h3>
       <p>围绕箱体障碍开展双足机器人感知与运动控制测试，探索机器人翻越箱体的能力。目前仍处于测试阶段。</p>
-      <div class="research-links"><button type="button" data-research-video="BV19dsz6eEtQ" data-video-title="双足机器人感知翻越箱体">观看测试视频</button><a href="https://www.bilibili.com/video/BV19dsz6eEtQ/" target="_blank" rel="noopener noreferrer">B 站原视频 ↗</a></div>
+      <div class="research-links">
+        <button type="button" data-research-video="BV19dsz6eEtQ" data-video-title="双足机器人感知翻越箱体">观看测试视频</button>
+      </div>
     </div>
   </article>
   <article class="research-entry">
