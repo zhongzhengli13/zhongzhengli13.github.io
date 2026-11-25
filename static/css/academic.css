@@ -114,6 +114,8 @@
 .experience-grid h3 { margin: 0 0 18px; font-size: 17px; font-weight: 400; }
 .education-list, .honors-list { display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
 .education-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 15px; }
+.education-school { position: relative; padding-inline-start: 46px; }
+.education-school img { position: absolute; inset-block-start: 0; inset-inline-start: 0; width: 36px; height: 36px; object-fit: contain; border-radius: 50%; }
 .education-list strong, .honors-list strong { display: block; color: var(--text-primary); font-size: 16px; font-weight: 400; line-height: 1.65; }
 .education-list span, .honors-list span { display: block; margin-top: 3px; color: var(--text-secondary); font-size: 15px; line-height: 1.65; }
 .education-list time { flex-shrink: 0; color: var(--text-secondary); font-size: 15px; font-variant-numeric: tabular-nums; }
