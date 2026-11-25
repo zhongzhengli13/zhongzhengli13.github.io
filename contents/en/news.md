@@ -43,7 +43,7 @@
   <article class="timeline-item">
     <time datetime="2026-08-21">2026.08.21</time>
     <div>
-      <h3>Open-sourced G1-Perceptive-Sim2Sim</h3>
+      <h3>🎉🎉 Open-sourced G1-Perceptive-Sim2Sim</h3>
       <p>Open-sourced a Sim2Sim example for quickly validating Unitree G1 policies from Instinct in MuJoCo. <a href="https://github.com/zhongzhengli13/G1-Perceptive-Sim2Sim" target="_blank" rel="noopener noreferrer">View GitHub repository ↗</a></p>
     </div>
   </article>

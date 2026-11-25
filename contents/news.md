@@ -43,7 +43,7 @@
   <article class="timeline-item">
     <time datetime="2026-08-21">2026.08.21</time>
     <div>
-      <h3>开源 G1-Perceptive-Sim2Sim</h3>
+      <h3>🎉🎉 开源 G1-Perceptive-Sim2Sim</h3>
       <p>开源了配合 Instinct 使用的 Sim2Sim 示例，可在 MuJoCo 中快速验证宇树 G1 的策略。 <a href="https://github.com/zhongzhengli13/G1-Perceptive-Sim2Sim" target="_blank" rel="noopener noreferrer">查看 GitHub 仓库 ↗</a></p>
     </div>
   </article>
