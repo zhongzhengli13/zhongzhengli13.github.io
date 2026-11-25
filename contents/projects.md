@@ -35,12 +35,12 @@
   <article class="research-entry">
     <figure class="research-figure"><img src="static/assets/img/research/stepping-piles.jpg" width="640" height="576" alt="梅花桩仿真视频截图，机器人单脚落在桩体上" loading="lazy"><figcaption>梅花桩 MuJoCo 仿真，视频截图</figcaption></figure>
     <div class="research-copy">
-      <h3>人形机器人全身运动控制与跑酷</h3>
-      <p>目前在做梅花桩任务的 MuJoCo 仿真测试，全身运动控制和跑酷技能仍在探索。</p>
+      <h3>人形机器人感知梅花桩</h3>
+      <p>在 MuJoCo 中开展感知梅花桩任务，探索人形机器人如何利用桩体位置信息，在有限的支撑面上准确落脚、保持平衡。</p>
       <div class="research-links"><a href="https://www.xiaohongshu.com/discovery/item/6ad6e701000000002901b37f?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABjJLuYzMzWblSaQl3Y5L58JSZ1BrztBbP7JHcbGZUp6s=&amp;xsec_source=pc_share" target="_blank" rel="noopener noreferrer">MuJoCo 仿真演示 ↗</a></div>
       <details class="academic-details"><summary>项目说明</summary><dl>
-        <div><dt>方法</dt><dd>围绕复杂地形任务开展策略训练，探索从训练到真机部署、调试的技能学习流程。</dd></div>
-        <div><dt>个人贡献</dt><dd>负责策略训练、真机部署与调试流程的推进，持续开展复杂地形与全身技能探索。</dd></div>
+        <div><dt>任务设置</dt><dd>机器人需要根据桩体位置调整落脚点，依次踏上相邻的桩体。</dd></div>
+        <div><dt>当前进展</dt><dd>正在进行仿真测试，重点观察落脚位置和换步时的平衡。</dd></div>
       </dl></details>
     </div>
   </article>

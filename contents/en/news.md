@@ -35,8 +35,8 @@
   <article class="timeline-item">
     <time>2026.09 - Present</time>
     <div>
-      <h3>Stepping-Pile and Whole-Body Parkour Exploration</h3>
-      <p>Started exploring complex-terrain tasks such as stepping piles, along with whole-body control and parkour skills for humanoid robots.</p>
+      <h3>Simulating Perception-Guided Stepping on Pillars</h3>
+      <p>Started testing foot placement and balance in MuJoCo as a humanoid robot steps from one pillar to the next.</p>
     </div>
   </article>
 

@@ -35,12 +35,12 @@
   <article class="research-entry">
     <figure class="research-figure"><img src="static/assets/img/research/stepping-piles.jpg" width="640" height="576" alt="Frame from the stepping-pile simulation video, showing the robot placing a foot on a pillar" loading="lazy"><figcaption>Stepping-pile simulation, frame from my video</figcaption></figure>
     <div class="research-copy">
-      <h3>Humanoid Whole-Body Control and Parkour</h3>
-      <p>I am testing the stepping-pile task in MuJoCo. Whole-body control and parkour skills are still work in progress.</p>
+      <h3>Perception-Guided Stepping on Pillars</h3>
+      <p>I use MuJoCo to study how a humanoid robot can use the positions of pillars to place its feet accurately and maintain balance on small support surfaces.</p>
       <div class="research-links"><a href="https://www.xiaohongshu.com/discovery/item/6ad6e701000000002901b37f?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=ABjJLuYzMzWblSaQl3Y5L58JSZ1BrztBbP7JHcbGZUp6s=&amp;xsec_source=pc_share" target="_blank" rel="noopener noreferrer">MuJoCo simulation demo ↗</a></div>
       <details class="academic-details"><summary>Details</summary><dl>
-        <div><dt>Approach</dt><dd>Train policies for complex-terrain tasks and explore the workflow from training to real-robot deployment and debugging.</dd></div>
-        <div><dt>My contribution</dt><dd>I am responsible for advancing policy training, real-robot deployment, and debugging while exploring complex-terrain locomotion and whole-body skills.</dd></div>
+        <div><dt>Task setup</dt><dd>The robot adjusts its footholds based on pillar positions and steps from one pillar to the next.</dd></div>
+        <div><dt>Current progress</dt><dd>Simulation tests focus on foot placement and balance between steps.</dd></div>
       </dl></details>
     </div>
   </article>
