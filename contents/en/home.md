@@ -1,5 +1,5 @@
 <p>I am a master's student at Shandong University. I received my bachelor's degree in Computer Science and Technology from Inner Mongolia Agricultural University.</p>
-<p>I work on perception and locomotion control for humanoid robots, with interests in reinforcement learning and sim-to-real transfer. My current work includes policy training and real-robot trials over varied terrain, alongside stepping-pile simulation.</p>
+<p>My research focuses on perception and locomotion control for humanoid robots. I study how to integrate terrain perception into reinforcement learning policies so robots can adapt their gait to changing environments and walk stably over challenging terrain. I also study how to transfer locomotion policies from simulation to real robots, where I test their stability and ability to adapt to different terrain.</p>
 <div class="academic-links" aria-label="Contact and profiles">
   <a href="https://github.com/zhongzhengli13" target="_blank" rel="noopener">GitHub</a>
   <a href="https://space.bilibili.com/519084825" target="_blank" rel="noopener">Bilibili</a>
